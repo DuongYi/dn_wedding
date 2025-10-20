@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
 
   return (
     <div className="relative">
-      <nav className={`w-full ${header ? `bg-white ${!alwaysShow ? 'shadow-md drop-shadow-sm' : ''}` : 'bg-transparent'} ${alwaysShow ? '' : 'fixed left-0 right-0 z-10 transition-all duration-450'} ${header ? 'top-0' : '-top-24'}`}>
+      <nav className={`w-full ${header ? `bg-white ${!alwaysShow ? 'shadow-md drop-shadow-sm' : ''}` : 'bg-transparent'} ${alwaysShow ? '' : 'fixed z-50 left-0 right-0 transition-all duration-450'} ${header ? 'top-0' : '-top-24'}`}>
         <div className="">
           <div className="container max-w-[1730px] mx-auto flex justify-between items-center py-2 max-md:justify-between">
             {/* LOGO */}
