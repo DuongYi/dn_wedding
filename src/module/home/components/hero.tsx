@@ -52,13 +52,13 @@ const Hero: React.FC = () => {
 
 
         {/* Wedding Info */}
-        <div className="absolute left-10 bottom-[180px]">
-          <p className="text-gray-500 text-[20px] md:text-base font-light">
-            Hi, Welcome to our Big Day in{" "}
-            <span className="font-semibold text-black text-[30px]">June 15, 2026.</span>
+        <div className="absolute left-0 bottom-[180px] z-10">
+          <p className="text-gray-600 text-[22px] md:text-base font-light">
+            Trân trọng kính mời đến dự tiệc cưới của chúng mình{" "}
+            <span className="font-semibold text-black text-[24px]">09.11.2025</span>
           </p>
-          <p className="text-gray-500 text-[20px] md:text-base font-light max-w-md">
-            Together, let&apos;s create a remarkable journey where our dreams become realities.
+          <p className="text-gray-600 text-[20px] md:text-base font-light max-w-md mt-2">
+            Cùng nhau bước vào chương mới, nơi tình yêu và hạnh phúc bắt đầu.
           </p>
         </div>
       </div>
