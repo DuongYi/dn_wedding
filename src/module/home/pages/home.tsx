@@ -4,6 +4,7 @@ import Hero from "../components/hero";
 import Header from "@/components/header";
 import HomeContent from "../components/home_content";
 import BodyTop from "../components/body_top";
+import Introduce from "../components/introduce";
 
 
 const HomePage: React.FC = () => {
@@ -13,6 +14,7 @@ const HomePage: React.FC = () => {
       <Hero />
       <HomeContent>
         <BodyTop />
+        <Introduce />
       </HomeContent>
     </div>
   );

@@ -15,9 +15,7 @@ const HomeContent: React.FC<HomeContentProps> = ({
   return (
     <section className={classNameSection}>
       <div className={classNameDiv}>
-        <div className='max-w-screen-2xl w-full mx-auto px-5'>
-          {children}
-        </div>
+        {children}
       </div>
     </section>
   );

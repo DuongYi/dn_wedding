@@ -31,95 +31,92 @@ const BodyTop: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full py-20 bg-white"
+      className="relative w-full py-52 bg-white"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="max-w-screen-2xl mx-auto px-5">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left images column */}
-          <div className="lg:col-span-3 space-y-6">
-            <div
-              className="relative w-full aspect-3/4 rounded-lg overflow-hidden shadow-xl"
-              style={getTransform(30)}
-            >
-              <Image
-                src="/asset/pictures/home/wedding-couple.jpg"
-                alt="Wedding couple"
-                fill
-                className="object-cover grayscale"
-              />
-            </div>
-            <div
-              className="relative w-full aspect-4/3 rounded-lg overflow-hidden shadow-xl"
-              style={getTransform(-20)}
-            >
-              <Image
-                src="/asset/pictures/home/wedding-couple2.png"
-                alt="Bride with bouquet"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+      {/* Left images column */}
+      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[480px]">
+        <div
+          className="relative w-[80%] aspect-3/4 overflow-hidden shadow-xl -mb-12"
+          style={getTransform(30)}
+        >
+          <Image
+            src="/asset/pictures/wedding/ac18.png"
+            alt="Wedding couple"
+            fill
+            className="absolute inset-0 object-cover"
+          />
+        </div>
+        <div
+          className="relative left-[210px] z-1 w-[60%] aspect-3/4"
+          style={getTransform(-20)}
+        >
+          <Image
+            src="/asset/pictures/wedding/ac19.png"
+            alt="Bride with bouquet"
+            fill
+            className="absolute inset-0 object-cover"
+          />
+        </div>
+      </div>
 
-          {/* Center quote column */}
-          <div className="lg:col-span-6 text-center px-4 lg:px-12 py-8">
-            <h2 className="text-4xl lg:text-6xl xl:text-7xl font-light mb-8 leading-tight text-gray-800">
-              <span className="text-6xl lg:text-8xl">&ldquo;</span>
-              You are my today and all of my tomorrows.
-              <span className="text-6xl lg:text-8xl">&rdquo;</span>
-            </h2>
+      {/* Center quote column */}
+      <div className='w-full mx-auto px-3'>
+        <div className="max-w-7xl mx-auto">
+          <div className="mt-32 mx-auto max-w-5xl px-6">
+            <div className="text-center">
+              <h2 className="text-4xl lg:text-6xl xl:text-8xl font-light leading-tight text-gray-800 font-felidae">
+                <span className="text-6xl lg:text-8xl">&ldquo;</span>
+                You are my today and all of my tomorrows.
+                <span className="text-6xl lg:text-8xl">&rdquo;</span>
+              </h2>
 
-            <p className="text-base lg:text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Your smile is so gentle, yet powerful enough to light up the darkest corners of my soul.
-              It carries warmth, hope, and a kind of magic the night sky could only dream of.
-              While stars twinkle far away in the heavens, your smile glows right here beside me—
-              real, radiant, and made just for my heart to find peace. It&apos;s not just beauty I see;
-              it&apos;s love, comfort, and home all at once.
-            </p>
+              <p className="text-base lg:text-lg text-gray-600 leading-[35px] mb-8 max-w-[710px] mx-auto pt-8">
+                Nụ cười của em thật dịu dàng, nhưng cũng đủ mạnh mẽ để thắp sáng những góc tối nhất trong tâm hồn anh. Nó mang theo hơi ấm, hy vọng, và một loại phép thuật mà bầu trời đêm chỉ có thể mơ ước. Trong khi những vì sao lấp lánh xa xăm trên bầu trời, nụ cười của em tỏa sáng ngay bên cạnh anh - chân thật, rạng rỡ, và được tạo ra chỉ để trái tim anh tìm thấy sự bình yên. Anh không chỉ thấy vẻ đẹp; đó là tình yêu, sự an ủi, và cả mái ấm, tất cả cùng một lúc.
+              </p>
 
-            {/* Decorative flower illustration */}
-            <div className="flex justify-center">
+              {/* Decorative flower illustration */}
               <div
-                className="relative w-20 h-20"
-                style={getTransform(15)}
+                className="h-36 rotate-45 mt-16"
               >
                 <Image
-                  src="/asset/pictures/icon/flower.png"
+                  src="/asset/pictures/icon/flower2.svg"
                   alt="Flower decoration"
                   fill
-                  className="object-contain opacity-60"
                 />
               </div>
-            </div>
-          </div>
 
-          {/* Right images column */}
-          <div className="lg:col-span-3 space-y-6">
-            <div
-              className="relative w-full aspect-square rounded-lg overflow-hidden shadow-xl"
-              style={getTransform(-25)}
-            >
-              <Image
-                src="/asset/pictures/home/wedding-couple2.png"
-                alt="Bride portrait"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div
-              className="relative w-full aspect-3/4 rounded-lg overflow-hidden shadow-xl"
-              style={getTransform(35)}
-            >
-              <Image
-                src="/asset/pictures/home/wedding-couple.jpg"
-                alt="Wedding rings"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Right images column */}
+      <div className="absolute left-auto right-0 top-1/2 mt-12 mr-8 -translate-y-1/2 w-[480px] text-right">
+        <div
+          className="w-full"
+          style={getTransform(-25)}
+        >
+          <div className="relative w-[50%] aspect-6/7 overflow-hidden shadow-xl ml-auto">
+            <Image
+              src="/asset/pictures/wedding/ac20.png"
+              alt="Bride portrait"
+              fill
+              className="absolute inset-0 object-cover"
+            />
+          </div>
+        </div>
+        <div
+          className="relative w-[75%] aspect-3/4 overflow-hidden shadow-xl mt-[110px] ml-auto mr-8"
+          style={getTransform(35)}
+        >
+          <Image
+            src="/asset/pictures/wedding/ac28.png"
+            alt="Wedding rings"
+            fill
+            className="absolute inset-0 object-cover"
+          />
         </div>
       </div>
     </div>
