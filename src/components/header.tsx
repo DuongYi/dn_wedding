@@ -72,22 +72,22 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
             <nav className="absolute left-1/2 transform -translate-x-1/2 max-md:hidden">
               <ul className="flex">
                 <li>
-                  <Link href="/" className="text-black relative w-fit font-bold text-base ml-6 after:content-[''] after:bg-red-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center">
+                  <Link href="/" className="text-black relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-red-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center font-roboto">
                     Wedding
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-black relative w-fit font-bold text-base ml-6 after:content-[''] after:bg-red-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center">
+                  <Link href="/" className="text-black relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-red-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center font-roboto">
                     Chuyện chúng mình
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-black relative w-fit font-bold text-base ml-6 after:content-[''] after:bg-red-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center">
+                  <Link href="/" className="text-black relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-red-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center font-roboto">
                     Album
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-black relative w-fit font-bold text-base ml-6 after:content-[''] after:bg-red-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center">
+                  <Link href="/" className="text-black relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-red-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center font-roboto">
                     Thiệp cưới
                   </Link>
                 </li>

@@ -3,6 +3,7 @@ import React from "react";
 import Hero from "../components/hero";
 import Header from "@/components/header";
 import HomeContent from "../components/home_content";
+import BodyTop from "../components/body_top";
 
 
 const HomePage: React.FC = () => {
@@ -11,9 +12,7 @@ const HomePage: React.FC = () => {
       <Header alwaysShow={true} />
       <Hero />
       <HomeContent>
-        <div className="h-[1000px]">
-          {/* Nội dung trang chủ khác sẽ được thêm vào đây */}
-        </div>
+        <BodyTop />
       </HomeContent>
     </div>
   );
