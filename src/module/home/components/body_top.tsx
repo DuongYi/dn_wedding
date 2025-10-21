@@ -1,14 +1,48 @@
-import React from 'react'
+"use client"
+
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
 
 const BodyTop: React.FC = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+
+    const rect = containerRef.current.getBoundingClientRect()
+    const x = (e.clientX - rect.left - rect.width / 2) / rect.width
+    const y = (e.clientY - rect.top - rect.height / 2) / rect.height
+
+    setMousePosition({ x, y })
+  }
+
+  const handleMouseLeave = () => {
+    setMousePosition({ x: 0, y: 0 })
+  }
+
+  const getTransform = (intensity: number) => {
+    return {
+      transform: `translate(${mousePosition.x * intensity}px, ${mousePosition.y * intensity}px)`,
+      transition: 'transform 0.3s ease-out'
+    }
+  }
+
   return (
-    <div className="w-full py-20 bg-white">
+    <div
+      ref={containerRef}
+      className="w-full py-20 bg-white"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="max-w-screen-2xl mx-auto px-5">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left images column */}
           <div className="lg:col-span-3 space-y-6">
-            <div className="relative w-full aspect-3/4 rounded-lg overflow-hidden shadow-xl">
+            <div
+              className="relative w-full aspect-3/4 rounded-lg overflow-hidden shadow-xl"
+              style={getTransform(30)}
+            >
               <Image
                 src="/asset/pictures/home/wedding-couple.jpg"
                 alt="Wedding couple"
@@ -16,7 +50,10 @@ const BodyTop: React.FC = () => {
                 className="object-cover grayscale"
               />
             </div>
-            <div className="relative w-full aspect-4/3 rounded-lg overflow-hidden shadow-xl">
+            <div
+              className="relative w-full aspect-4/3 rounded-lg overflow-hidden shadow-xl"
+              style={getTransform(-20)}
+            >
               <Image
                 src="/asset/pictures/home/wedding-couple2.png"
                 alt="Bride with bouquet"
@@ -44,7 +81,10 @@ const BodyTop: React.FC = () => {
 
             {/* Decorative flower illustration */}
             <div className="flex justify-center">
-              <div className="relative w-20 h-20">
+              <div
+                className="relative w-20 h-20"
+                style={getTransform(15)}
+              >
                 <Image
                   src="/asset/pictures/icon/flower.png"
                   alt="Flower decoration"
@@ -57,7 +97,10 @@ const BodyTop: React.FC = () => {
 
           {/* Right images column */}
           <div className="lg:col-span-3 space-y-6">
-            <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-xl">
+            <div
+              className="relative w-full aspect-square rounded-lg overflow-hidden shadow-xl"
+              style={getTransform(-25)}
+            >
               <Image
                 src="/asset/pictures/home/wedding-couple2.png"
                 alt="Bride portrait"
@@ -65,7 +108,10 @@ const BodyTop: React.FC = () => {
                 className="object-cover"
               />
             </div>
-            <div className="relative w-full aspect-3/4 rounded-lg overflow-hidden shadow-xl">
+            <div
+              className="relative w-full aspect-3/4 rounded-lg overflow-hidden shadow-xl"
+              style={getTransform(35)}
+            >
               <Image
                 src="/asset/pictures/home/wedding-couple.jpg"
                 alt="Wedding rings"
