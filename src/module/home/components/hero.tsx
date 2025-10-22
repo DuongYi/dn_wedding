@@ -1,7 +1,39 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 const Hero: React.FC = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  })
+
+  useEffect(() => {
+    const weddingDate = new Date('2025-11-09T00:00:00').getTime()
+
+    const updateCountdown = () => {
+      const now = new Date().getTime()
+      const distance = weddingDate - now
+
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+        })
+      }
+    }
+
+    updateCountdown()
+    const interval = setInterval(updateCountdown, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative h-[833px] max-w-[1730px] mx-auto">
       <div className="">
@@ -16,7 +48,7 @@ const Hero: React.FC = () => {
 
         {/* Circular Badge - YOU ARE INVITED */}
         <div className="absolute left-[463px] top-[333px]">
-          <div className="relative w-[140px] h-[140px] border-[1px] border-gray-400 border-solid p-[5px] rounded-full text-[11px]">
+          <div className="relative w-[140px] h-[140px] border border-gray-400 border-solid p-[5px] rounded-full text-[11px]">
             <div className="animate-rotate">
               <svg viewBox="0 0 100 100" className="w-full h-full">
                 <path
@@ -31,12 +63,12 @@ const Hero: React.FC = () => {
                 </text>
               </svg>
               {/* Decorative flower */}
-              <div className="absolute top-[52px] left-[12px] w-[70%] h-[70%] align-middle">
+              <div className="absolute top-[52px] left-[22px] w-[70%] h-[70%] align-middle">
                 <Image
                   src="/asset/pictures/icon/flower.png"
                   alt="Flower"
                   fill
-                  className=" rotate-[-46deg]"
+                  className=" rotate-[-66deg]"
                 />
               </div>
             </div>
@@ -60,6 +92,26 @@ const Hero: React.FC = () => {
           <p className="text-gray-600 text-[20px] md:text-base font-light max-w-md mt-2">
             Cùng nhau bước vào chương mới, nơi tình yêu và hạnh phúc bắt đầu.
           </p>
+          {/* Countdown Timer */}
+          <div className="mt-8 flex gap-6">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 font-felidae">{timeLeft.days}</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wider mt-1">Ngày</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 font-felidae">{timeLeft.hours}</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wider mt-1">Giờ</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 font-felidae">{timeLeft.minutes}</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wider mt-1">Phút</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 font-felidae">{timeLeft.seconds}</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wider mt-1">Giây</div>
+            </div>
+          </div>
+
         </div>
       </div>
 
