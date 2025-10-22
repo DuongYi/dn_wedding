@@ -6,6 +6,7 @@ import HomeContent from "../components/home_content";
 import BodyTop from "../components/body_top";
 import Introduce from "../components/introduce";
 import LoveStory from "../components/love_story";
+import WeddingPlan from "../components/wedding_plan";
 
 
 const HomePage: React.FC = () => {
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
         <BodyTop />
         <Introduce />
         <LoveStory />
+        <WeddingPlan />
       </HomeContent>
     </div>
   );

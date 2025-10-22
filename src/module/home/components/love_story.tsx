@@ -84,7 +84,7 @@ const LoveStory: React.FC = () => {
   }, [recalc]);
 
   return (
-    <section ref={sectionRef} className="relative bg-white py-[150px] max-w-7xl mx-auto" id="love-story">
+    <section ref={sectionRef} className="relative bg-white pt-[150px] pb-8 max-w-7xl mx-auto" id="love-story">
       {/* Sticky viewport while we scroll vertically */}
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Horizontal track that we translate as you scroll */}
