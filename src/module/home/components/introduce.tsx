@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Introduce: React.FC = () => {
   return (
-    <div className="relative w-full py-24 bg-[#f5f5f5]">
+    <div className="relative w-full py-38 bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
