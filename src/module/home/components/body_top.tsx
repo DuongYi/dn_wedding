@@ -73,7 +73,7 @@ const BodyTop: React.FC = () => {
               </h2>
 
               <p className="text-base lg:text-lg text-gray-600 leading-[35px] mb-8 max-w-[710px] mx-auto pt-8">
-                Nụ cười của em thật dịu dàng, nhưng cũng đủ mạnh mẽ để thắp sáng những góc tối nhất trong tâm hồn anh. Nó mang theo hơi ấm, hy vọng, và một loại phép thuật mà bầu trời đêm chỉ có thể mơ ước. Trong khi những vì sao lấp lánh xa xăm trên bầu trời, nụ cười của em tỏa sáng ngay bên cạnh anh - chân thật, rạng rỡ, và được tạo ra chỉ để trái tim anh tìm thấy sự bình yên. Anh không chỉ thấy vẻ đẹp; đó là tình yêu, sự an ủi, và cả mái ấm, tất cả cùng một lúc.
+                Nụ cười của em thật dịu dàng, nhưng cũng đủ mạnh mẽ để thắp sáng những góc tối nhất trong tâm hồn anh. Nó mang theo hơi ấm, hy vọng, và một loại phép thuật mà ngay cả bầu trời đêm cũng phải ghen tị. Khi những vì sao vẫn lấp lánh nơi xa, nụ cười của em lại tỏa sáng ngay bên cạnh anh – rạng rỡ, chân thành, và sinh ra để mang đến bình yên cho trái tim này. Với anh, đó không chỉ là vẻ đẹp mà là tình yêu, là nơi trú ngụ, là mái ấm anh luôn tìm kiếm.
               </p>
 
               {/* Decorative flower illustration */}
