@@ -11,7 +11,7 @@ const Introduce: React.FC = () => {
 
           {/* Left Card - Kim Ngan */}
           <div className="lg:col-span-3 flex flex-col items-start text-center">
-            <div className="relative w-full max-w-[280px] aspect-3/4 overflow-hidden mb-6 shadow-lg">
+            <div className="relative w-full max-w-[280px] aspect-3/4 overflow-hidden mb-6 shadow-lg shine-on-hover">
               <Image
                 src="/asset/pictures/wedding/ac24.png"
                 alt="Kim Ngan"
@@ -27,7 +27,7 @@ const Introduce: React.FC = () => {
 
           {/* Center Image - Main Couple */}
           <div className="lg:col-span-6 flex justify-center">
-            <div className="relative w-full max-w-[500px] aspect-3/4 overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-[500px] aspect-3/4 overflow-hidden shadow-2xl shine-on-hover">
               <Image
                 src="/asset/pictures/wedding/ac17.png"
                 alt="Wedding Couple"
@@ -43,7 +43,7 @@ const Introduce: React.FC = () => {
             <p className="text-[15px] text-gray-600 leading-relaxed max-w-[250px] mb-6 text-right">
               Với một trái tim tràn đầy tình yêu thương và một tâm hồn tràn đầy hy vọng, anh rất mong được bắt đầu cuộc hành trình này cùng em bên cạnh.
             </p>
-            <div className="relative w-full max-w-[280px] aspect-3/4 overflow-hidden shadow-lg">
+            <div className="relative w-full max-w-[280px] aspect-3/4 overflow-hidden shadow-lg shine-on-hover">
               <Image
                 src="/asset/pictures/member/person_2.jpg"
                 alt="Duc Duong"
