@@ -1,14 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @font-face {
   font-family: Felide;
-  src: url("/public/asset/font/Felidae.ttf");
+  src: url("/asset/font/Felidae.ttf");
+}
+
+@font-face {
+  font-family: FzManstein;
+  src: url("/asset/font/FzManstein.ttf");
 }
 
 @import "tailwindcss";
 
-:root {
+:root {  
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -43,6 +47,7 @@ body {
   --font-felidae: Felidae, "sans-serif";
   --font-dm-sans: "DM Sans", sans-serif;
   --font-roboto: "Roboto", sans-serif;
+  --font-fz-manstein: FzManstein, "sans-serif";
 
   --animate-rotate: rotate-anim 30s linear infinite;
 

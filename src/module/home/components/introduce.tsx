@@ -19,7 +19,7 @@ const Introduce: React.FC = () => {
                 className="absolute inset-0 object-cover"
               />
             </div>
-            <h3 className="text-4xl font-light mb-3 text-gray-800 font-felidae">Kim Ngan</h3>
+            <h3 className="text-4xl font-light mb-3 text-gray-800 font-fz-manstein">Kim Ngân</h3>
             <p className="text-[15px] text-gray-600 leading-relaxed max-w-[250px] text-start">
               Em không cần một câu chuyện cổ tích, chỉ cần mỗi ngày đều có anh bên cạnh – cùng em đi qua những điều giản dị nhất của cuộc sống.
             </p>
@@ -39,7 +39,7 @@ const Introduce: React.FC = () => {
 
           {/* Right Card - Duc Duong */}
           <div className="lg:col-span-3 flex flex-col text-center items-end self-end">
-            <h3 className="text-4xl font-light mb-3 text-gray-800 font-felidae">Duc Duong</h3>
+            <h3 className="text-4xl font-light mb-3 text-gray-800 font-fz-manstein">Đức Dương</h3>
             <p className="text-[15px] text-gray-600 leading-relaxed max-w-[250px] mb-6 text-right">
               Trái tim anh đầy ắp yêu thương, và điều anh mong nhất là được cùng em viết nên chương mới của cuộc đời.
             </p>

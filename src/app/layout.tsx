@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Sansita } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({
+  subsets: ["latin-ext"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const sansita = Sansita({
+  weight: ["400", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-sansita",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Froce Studio",
@@ -23,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={sansita.className}>
         <SmoothScroll speed={1} smoothness={0.1} />
         {children}
       </body>
