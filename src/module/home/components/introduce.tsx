@@ -16,6 +16,7 @@ const Introduce: React.FC = () => {
                 src="/asset/pictures/wedding/ac24.png"
                 alt="Kim Ngan"
                 fill
+                sizes="(max-width: 1024px) 280px, 280px"
                 className="absolute inset-0 object-cover"
               />
             </div>
@@ -32,6 +33,7 @@ const Introduce: React.FC = () => {
                 src="/asset/pictures/wedding/ac17.png"
                 alt="Wedding Couple"
                 fill
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="absolute inset-0 object-cover"
               />
             </div>
@@ -48,6 +50,7 @@ const Introduce: React.FC = () => {
                 src="/asset/pictures/member/person_2.jpg"
                 alt="Duc Duong"
                 fill
+                sizes="(max-width: 1024px) 280px, 280px"
                 className="absolute inset-0 object-cover"
               />
             </div>

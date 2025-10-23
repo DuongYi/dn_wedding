@@ -45,6 +45,7 @@ const BodyTop: React.FC = () => {
             src="/asset/pictures/wedding/ac18.png"
             alt="Wedding couple"
             fill
+            sizes="400px"
             className="absolute inset-0 object-cover"
           />
         </div>
@@ -56,6 +57,7 @@ const BodyTop: React.FC = () => {
             src="/asset/pictures/wedding/ac19.png"
             alt="Bride with bouquet"
             fill
+            sizes="300px"
             className="absolute inset-0 object-cover"
           />
         </div>
@@ -84,6 +86,7 @@ const BodyTop: React.FC = () => {
                   src="/asset/pictures/icon/flower2.svg"
                   alt="Flower decoration"
                   fill
+                  sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 144px"
                 />
               </div>
 
@@ -103,6 +106,7 @@ const BodyTop: React.FC = () => {
               src="/asset/pictures/wedding/ac20.png"
               alt="Bride portrait"
               fill
+              sizes="240px"
               className="absolute inset-0 object-cover"
             />
           </div>
@@ -115,6 +119,7 @@ const BodyTop: React.FC = () => {
             src="/asset/pictures/wedding/ac28.png"
             alt="Wedding rings"
             fill
+            sizes="360px"
             className="absolute inset-0 object-cover"
           />
         </div>

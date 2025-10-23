@@ -44,6 +44,7 @@ const WeddingPlan: React.FC = () => {
                       src="/asset/pictures/timeline/timeline1.png"
                       alt="Lễ Ăn Hỏi"
                       fill
+                      sizes="(max-width: 768px) 160px, 200px"
                       className="absolute inset-0 object-contain"
                     />
                   </div>
@@ -63,6 +64,7 @@ const WeddingPlan: React.FC = () => {
                       src="/asset/pictures/timeline/timeline2.png"
                       alt="Lễ Vu Quy"
                       fill
+                      sizes="(max-width: 768px) 160px, 200px"
                       className="absolute inset-0 object-contain"
                     />
                   </div>
@@ -101,6 +103,7 @@ const WeddingPlan: React.FC = () => {
                       src="/asset/pictures/timeline/timeline3.png"
                       alt="Lễ Thành Hôn"
                       fill
+                      sizes="(max-width: 768px) 160px, 200px"
                       className="absolute inset-0 object-contain"
                     />
                   </div>

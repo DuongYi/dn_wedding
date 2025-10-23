@@ -95,9 +95,13 @@ const OurLoveStory: React.FC = () => {
 
   useEffect(() => {
     if (isMobile) {
-      // Reset height for mobile
+      // Reset height for mobile - ensure it's completely removed
       if (sectionRef.current) {
-        sectionRef.current.style.height = 'auto';
+        sectionRef.current.style.height = '0px';
+        sectionRef.current.style.minHeight = '0px';
+      }
+      if (trackRef.current) {
+        trackRef.current.style.transform = 'translate3d(0,0,0)';
       }
       return;
     }
@@ -117,20 +121,25 @@ const OurLoveStory: React.FC = () => {
       });
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    recalc();
+
+    // Initial calculation with small delay to ensure layout is ready
+    const timer = setTimeout(() => {
+      recalc();
+    }, 100);
 
     return () => {
       ro.disconnect();
       window.removeEventListener("resize", recalc);
       window.removeEventListener("scroll", handleScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      clearTimeout(timer);
     };
   }, [recalc, onScroll, isMobile]);
 
   // Mobile/Tablet layout - Vertical scroll
   if (isMobile) {
     return (
-      <section className="relative bg-white py-12 px-4 w-full mx-auto" id="love-story">
+      <section className="relative bg-white py-12 px-4 w-full mx-auto min-h-0" id="love-story">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-felidae text-4xl md:text-5xl text-center text-black mb-12">
             Our Love Story
@@ -149,19 +158,21 @@ const OurLoveStory: React.FC = () => {
 
                 {/* Images */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-lg">
+                  <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-lg">
                     <Image
                       src={s.leftSrc}
                       alt={`${s.title} main`}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
                       className="object-cover"
                     />
                   </div>
-                  <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-lg">
+                  <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-lg">
                     <Image
                       src={s.rightSrc}
                       alt={`${s.title} detail`}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
                       className="object-cover"
                     />
                   </div>
@@ -186,7 +197,7 @@ const OurLoveStory: React.FC = () => {
 
   // Desktop layout - Horizontal scroll
   return (
-    <section ref={sectionRef} className="relative bg-white pt-[60px] pb-16 px-4 w-full mx-auto" id="love-story">
+    <section ref={sectionRef} className="relative bg-white lg:pt-[60px] lg:pb-16 px-4 w-full mx-auto" id="love-story">
       {/* Sticky viewport while we scroll vertically */}
       <div className="sticky top-0 h-screen max-w-[1720px] mx-auto overflow-hidden">
         {/* Horizontal track that we translate as you scroll */}
@@ -208,6 +219,7 @@ const OurLoveStory: React.FC = () => {
                     src={s.leftSrc}
                     alt={`${s.title} main`}
                     fill
+                    sizes="677px"
                     className="object-contain"
                   />
                 </div>
@@ -228,6 +240,7 @@ const OurLoveStory: React.FC = () => {
                         src={s.rightSrc}
                         alt={`${s.title} detail`}
                         fill
+                        sizes="310px"
                         className="object-cover"
                       />
                     </div>

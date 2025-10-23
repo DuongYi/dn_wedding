@@ -35,22 +35,22 @@ const Hero: React.FC = () => {
   }, [])
 
   return (
-    <section className="relative h-[400px] md:h-[600px] lg:h-[833px] max-w-[1730px] mx-auto overflow-hidden">
+    <section className="relative h-[400px] md:h-[600px] lg:h-[833px] max-w-[1730px] px-2 mx-auto overflow-hidden 2xl:overflow-visible">
       <div className="relative h-full">
         {/* Desktop Typography */}
         <h2 className="hidden lg:block font-medium mb-0 ml-2 perspective-[400px] font-felidae leading-[400px] relative z-10" aria-label="FOREVER">
-          <div aria-hidden="false" className="relative block text-start text-black translate-x-0 translate-y-0 translate-z-0 rotate-0 scale-100 origin-[860px_200px] opacity-100 font-felidae text-[290px]">FOREVER</div>
+          <div aria-hidden="false" className="relative block text-start text-black translate-x-0 translate-y-0 translate-z-0 rotate-0 scale-100 origin-[860px_200px] opacity-100 font-felidae text-[200px] 2xl:text-[290px]">FOREVER</div>
         </h2>
-        <h2 className="hidden lg:block perspective-[400px] absolute z-10 right-[380px] bottom-0 font-medium mb-0 ml-2 leading-[400px]" aria-label="AFTER">
-          <div aria-hidden="false" className="relative block text-start text-black  translate-x-0 translate-y-0 translate-z-0 rotate-0 scale-100 origin-[406.875px_200px] opacity-100 font-felidae text-[290px]">
+        <h2 className="hidden lg:block perspective-[400px] absolute z-10 right-[10px] 2xl:right-[350px] bottom-0 font-medium mb-0 ml-2 leading-[400px]" aria-label="AFTER">
+          <div aria-hidden="false" className="relative block text-start text-black translate-x-0 translate-y-0 translate-z-0 rotate-0 scale-100 origin-[406.875px_200px] opacity-100 font-felidae text-[200px] 2xl:text-[290px]">
             AFTER
           </div>
         </h2>
 
         {/* Mobile/Tablet Typography */}
         <div className="lg:hidden absolute top-8 md:top-12 left-4 md:left-8 z-10">
-          <h2 className="font-felidae text-5xl md:text-7xl text-black">FOREVER</h2>
-          <h2 className="font-felidae text-5xl md:text-7xl text-black mt-2">AFTER</h2>
+          <h2 className="font-felidae text-7xl md:text-[110px] text-black">FOREVER</h2>
+          <h2 className="font-felidae text-7xl md:text-[110px] text-black mt-2">AFTER</h2>
         </div>
 
         {/* Circular Badge - YOU ARE INVITED - Hidden on mobile */}
@@ -75,6 +75,7 @@ const Hero: React.FC = () => {
                   src="/asset/pictures/icon/flower.png"
                   alt="Flower"
                   fill
+                  sizes="100px"
                   className=" rotate-[-66deg]"
                 />
               </div>
@@ -91,8 +92,8 @@ const Hero: React.FC = () => {
 
 
         {/* Wedding Info */}
-        <div className="absolute left-4 md:left-8 lg:left-0 bottom-8 md:bottom-20 lg:bottom-[180px] z-10 max-w-[calc(100%-2rem)] md:max-w-md">
-          <p className="text-gray-600 text-sm md:text-lg lg:text-[22px] font-light">
+        <div className="absolute left-4 md:left-8 lg:left-0 bottom-8 md:bottom-20 lg:bottom-[120px] z-10 max-w-[calc(100%-2rem)] md:max-w-md">
+          <p className="text-gray-600 text-xs md:text-lg lg:text-[20px] font-light">
             Trân trọng kính mời đến dự tiệc cưới của chúng mình{" "}
             <span className="font-semibold text-black text-base md:text-xl lg:text-[24px]">09.11.2025</span>
           </p>
@@ -123,12 +124,13 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Right Image */}
-      <div className="absolute right-0 md:right-[-20px] lg:right-[-50px] top-0 w-full md:w-3/5 lg:w-1/2 h-full z-0">
+      <div className="absolute right-0 md:right-[-20px] lg:right-[-50px] top-0 w-full lg:w-1/2 h-full z-0">
         <div className="relative w-full h-full">
           <Image
             src="/asset/pictures/home/wedding-couple2.jpg"
             alt="Wedding Couple"
             fill
+            sizes="(max-width: 1024px) 60vw, 50vw"
             className="object-cover object-center md:object-right opacity-30 md:opacity-60 lg:opacity-100"
             priority
           />

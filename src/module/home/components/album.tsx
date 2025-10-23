@@ -115,6 +115,7 @@ const Album: React.FC = () => {
                       src={photo.src}
                       alt={photo.alt}
                       fill
+                      sizes="(max-width: 768px) 180px, (max-width: 1024px) 240px, 320px"
                       className="absolute inset-0 object-cover"
                     />
                   </div>
