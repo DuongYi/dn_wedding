@@ -8,10 +8,16 @@ interface SmoothScrollProps {
 
 const SmoothScroll: React.FC<SmoothScrollProps> = ({ speed = 1, smoothness = 0.1 }) => {
   useEffect(() => {
+    // Disable smooth scroll on mobile/touch devices
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice) {
+      return; // Exit early on touch devices
+    }
+
     let currentScroll = window.scrollY;
     let targetScroll = window.scrollY;
     let animationFrameId: number;
-    let lastProgrammaticScroll = 0;
 
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
@@ -28,7 +34,6 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ speed = 1, smoothness = 0.1
         // Large jump detected - sync with new position
         currentScroll = actualScroll;
         targetScroll = actualScroll;
-        lastProgrammaticScroll = Date.now();
       }
 
       // Lerp (Linear Interpolation) để scroll mượt
