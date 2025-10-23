@@ -95,6 +95,26 @@ body {
   }
 }
 
+/* Swing down animation - đu từ đỉnh chữ như xích đu */
+@keyframes swingDown {
+  0% {
+      opacity: 0;
+      transform: rotateX(-90deg) scale(0.8);
+  }
+  10% {
+    opacity: 0;
+    transform: rotateX(-80deg) scale(0.81)  ;
+  }
+  30% {
+    opacity: 0.3;
+    transform: rotateX(-65deg) scale(0.86);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+  }
+}
+
 
 
 
