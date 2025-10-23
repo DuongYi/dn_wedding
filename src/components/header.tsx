@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect, useCallback } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface HeaderProps {
   alwaysShow?: boolean; // true = luôn hiện header, bỏ qua logic scroll
@@ -15,6 +15,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('top'); // Track section hiện tại
   const pathname = usePathname(); // Get current route
+  const router = useRouter(); // Get router for navigation
 
   const toggleMenu = () => {
     setNavbar(!navbar);
@@ -24,6 +25,19 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
     e.preventDefault();
     setNavbar(false); // Close mobile menu immediately
 
+    // Nếu không ở trang home, navigate về home trước
+    if (pathname !== '/') {
+      // Lưu section cần scroll vào sessionStorage
+      sessionStorage.setItem('scrollToSection', sectionId);
+      router.push('/');
+      return;
+    }
+
+    // Nếu đã ở trang home, scroll bình thường
+    performScroll(sectionId);
+  };
+
+  const performScroll = (sectionId: string) => {
     // Special case: scroll to top
     if (sectionId === 'top') {
       const startY = window.scrollY;
@@ -154,6 +168,20 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
       window.removeEventListener('scroll', handleScrollSpy);
     }
   }, [scrollHeader, alwaysShow, pathname]);
+
+  // Effect để xử lý scroll sau khi navigate về home
+  useEffect(() => {
+    if (pathname === '/') {
+      const sectionToScroll = sessionStorage.getItem('scrollToSection');
+      if (sectionToScroll) {
+        // Đợi một chút để page load xong
+        setTimeout(() => {
+          performScroll(sectionToScroll);
+          sessionStorage.removeItem('scrollToSection');
+        }, 300);
+      }
+    }
+  }, [pathname]);
 
   return (
     <div className="relative">
