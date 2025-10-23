@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect, useCallback } from "react";
+import { usePathname } from "next/navigation";
 
 interface HeaderProps {
   alwaysShow?: boolean; // true = luôn hiện header, bỏ qua logic scroll
@@ -13,6 +14,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
   const [header, setHeader] = useState(alwaysShow); // Nếu alwaysShow = true thì hiện ngay
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('top'); // Track section hiện tại
+  const pathname = usePathname(); // Get current route
 
   const toggleMenu = () => {
     setNavbar(!navbar);
@@ -114,8 +116,14 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
 
     window.addEventListener('scroll', scrollHeader);
 
-    // Detect active section based on scroll position
+    // Detect active section based on scroll position - CHỈ KHI Ở TRANG HOME
     const handleScrollSpy = () => {
+      // Chỉ chạy scroll spy khi đang ở trang home
+      if (pathname !== '/') {
+        setActiveSection(''); // Clear active section khi không ở home
+        return;
+      }
+
       const sections = ['introduce', 'love-story', 'wedding-plan', 'album'];
       const scrollPosition = window.scrollY + 200; // Offset for better detection
 
@@ -145,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
       window.removeEventListener('scroll', scrollHeader);
       window.removeEventListener('scroll', handleScrollSpy);
     }
-  }, [scrollHeader, alwaysShow]);
+  }, [scrollHeader, alwaysShow, pathname]);
 
   return (
     <div className="relative">
@@ -212,7 +220,10 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   </a>
                 </li>
                 <li>
-                  <Link href="/" className="text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center font-roboto transition-colors duration-300">
+                  <Link
+                    href="/invitation"
+                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto transition-colors duration-300 ${pathname === '/invitation' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                  >
                     Thiệp cưới
                   </Link>
                 </li>
@@ -287,8 +298,8 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                 Album
               </a>
             </li>
-            <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
-              <Link href="#about" onClick={() => setNavbar(!navbar)}>
+            <li className={`text-base font-semibold py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent ${pathname === '/invitation' ? 'bg-pink-50 text-pink-600' : 'text-gray-800'}`}>
+              <Link href="/invitation" onClick={() => setNavbar(!navbar)}>
                 Thiệp cưới
               </Link>
             </li>
