@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import FallingHearts from "@/components/FallingHearts";
 import MusicPlayer from "@/components/MusicPlayer";
+import Loading from "@/components/Loading";
 
 const dmSans = DM_Sans({
   subsets: ["latin-ext"],
@@ -37,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sansita.className}>
+        <Loading />
         <SmoothScroll speed={0.5} smoothness={0.05} />
         <FallingHearts />
         <MusicPlayer />
