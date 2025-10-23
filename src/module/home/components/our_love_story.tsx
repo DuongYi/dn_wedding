@@ -43,6 +43,7 @@ const OurLoveStory: React.FC = () => {
   const trackRef = useRef<HTMLDivElement>(null);
   const tickingRef = useRef(false);
   const rafRef = useRef<number | null>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
 
   const getExtraScroll = () => {
     const vh = typeof window !== 'undefined' ? window.innerHeight : 800;
@@ -50,10 +51,17 @@ const OurLoveStory: React.FC = () => {
     return Math.max(60, Math.min(140, Math.round(vh * 0.1)));
   };
 
-
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const onScroll = useCallback(() => {
-    if (!sectionRef.current || !trackRef.current) return;
+    if (!sectionRef.current || !trackRef.current || isMobile) return;
     const sectionTop = sectionRef.current.offsetTop;
     const scrollY = window.scrollY;
     const vw = window.innerWidth;
@@ -71,10 +79,10 @@ const OurLoveStory: React.FC = () => {
 
     const translateX = -progress * distToScroll;
     trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
-  }, []);
+  }, [isMobile]);
 
   const recalc = useCallback(() => {
-    if (!sectionRef.current || !trackRef.current) return;
+    if (!sectionRef.current || !trackRef.current || isMobile) return;
     const trackWidth = trackRef.current.scrollWidth;
     const vw = window.innerWidth;
     const vh = window.innerHeight;
@@ -83,9 +91,17 @@ const OurLoveStory: React.FC = () => {
     const scrollLength = base + vh + extra * 2; // pin height + start/end padding
     sectionRef.current.style.height = `${scrollLength}px`;
     onScroll();
-  }, [onScroll]);
+  }, [onScroll, isMobile]);
 
   useEffect(() => {
+    if (isMobile) {
+      // Reset height for mobile
+      if (sectionRef.current) {
+        sectionRef.current.style.height = 'auto';
+      }
+      return;
+    }
+
     const ro = new ResizeObserver(() => recalc());
     if (sectionRef.current) ro.observe(sectionRef.current);
     if (trackRef.current) ro.observe(trackRef.current);
@@ -109,8 +125,66 @@ const OurLoveStory: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [recalc, onScroll]);
+  }, [recalc, onScroll, isMobile]);
 
+  // Mobile/Tablet layout - Vertical scroll
+  if (isMobile) {
+    return (
+      <section className="relative bg-white py-12 px-4 w-full mx-auto" id="love-story">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-felidae text-4xl md:text-5xl text-center text-black mb-12">
+            Our Love Story
+          </h2>
+
+          <div className="space-y-16">
+            {stories.map((s, idx) => (
+              <div key={s.title} className="flex flex-col gap-6">
+                {/* Story number and time */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-6xl md:text-7xl font-felidae text-gray-200">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <p className="text-rose-400 tracking-wide text-sm md:text-base">{s.time}</p>
+                </div>
+
+                {/* Images */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-lg">
+                    <Image
+                      src={s.leftSrc}
+                      alt={`${s.title} main`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-lg">
+                    <Image
+                      src={s.rightSrc}
+                      alt={`${s.title} detail`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Text content */}
+                <div className="text-center md:text-left px-4">
+                  <h4 className="font-felidae text-2xl md:text-3xl text-gray-900 mb-4">
+                    {s.title}
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                    {s.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop layout - Horizontal scroll
   return (
     <section ref={sectionRef} className="relative bg-white pt-[60px] pb-16 px-4 w-full mx-auto" id="love-story">
       {/* Sticky viewport while we scroll vertically */}
