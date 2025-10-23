@@ -11,6 +11,7 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ speed = 1, smoothness = 0.1
     let currentScroll = window.scrollY;
     let targetScroll = window.scrollY;
     let animationFrameId: number;
+    let lastProgrammaticScroll = 0;
 
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
@@ -21,6 +22,15 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ speed = 1, smoothness = 0.1
     };
 
     const smoothScrollAnimation = () => {
+      // Check if scroll position changed externally (programmatic scroll)
+      const actualScroll = window.scrollY;
+      if (Math.abs(actualScroll - currentScroll) > 50) {
+        // Large jump detected - sync with new position
+        currentScroll = actualScroll;
+        targetScroll = actualScroll;
+        lastProgrammaticScroll = Date.now();
+      }
+
       // Lerp (Linear Interpolation) để scroll mượt
       currentScroll += (targetScroll - currentScroll) * smoothness;
 

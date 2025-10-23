@@ -4,7 +4,7 @@ import React from "react";
 
 const WeddingPlan: React.FC = () => {
   return (
-    <section className="flex flex-col lg:flex-row w-full bg-white">
+    <section className="flex flex-col lg:flex-row w-full bg-white" id="wedding-plan">
       {/* Left: Image - Hidden on mobile */}
       <div className="hidden lg:block flex-1 relative w-full lg:w-1/2">
         <div className="bg-[url('/asset/pictures/wedding/ac3.png')] h-full min-h-[600px] bg-cover bg-no-repeat bg-center object-fill" ></div>

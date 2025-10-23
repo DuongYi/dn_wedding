@@ -3,6 +3,7 @@ import { DM_Sans, Sansita } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import FallingHearts from "@/components/FallingHearts";
+import MusicPlayer from "@/components/MusicPlayer";
 
 const dmSans = DM_Sans({
   subsets: ["latin-ext"],
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className={sansita.className}>
         <SmoothScroll speed={1} smoothness={0.1} />
         <FallingHearts />
+        <MusicPlayer />
         {children}
       </body>
     </html>

@@ -82,6 +82,7 @@ const Album: React.FC = () => {
     <section
       ref={sectionRef}
       className="relative w-full pt-12 md:pt-20 lg:pt-24 pb-20 md:pb-32 lg:pb-40 bg-linear-to-b from-white to-gray-50 overflow-hidden"
+      id="album"
     >
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-felidae text-center text-gray-800 mb-8 md:mb-12 lg:mb-16">
