@@ -157,10 +157,10 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
               <div className="flex items-center">
                 <Image
                   src="/asset/pictures/logo/dnlogo.png"
+                  alt="logo"
                   width={100}
                   height={100}
-                  alt="logo"
-                  className="focus:border-none active:border-none"
+                  className="scale-75 md:scale-100 transition-transform duration-300 ml-2 md:lg-0"
                 />
               </div>
             </Link>
@@ -258,43 +258,43 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
         </div>
 
         <div
-          className={`relative bg-white justify-self-center pb-3 md:pb-0 md:mt-0 xl:hidden ${navbar ? 'xl:p-0 block' : 'hidden'
+          className={`absolute left-0 right-0 top-full z-30 bg-white pb-3 md:pb-0 md:mt-0 xl:hidden ${navbar ? 'xl:p-0 block' : 'hidden'
             }`}
         >
-          <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-            <li className="text-base font-semibold text-black-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
+          <ul className="h-screen md:h-auto items-center justify-center md:flex w-full">
+            <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
               <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="cursor-pointer">
                 Wedding
               </a>
             </li>
-            <li className="text-base font-semibold text-black-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
+            <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
               <a href="#introduce" onClick={(e) => scrollToSection(e, 'introduce')} className="cursor-pointer">
                 Cặp đôi
               </a>
             </li>
-            <li className="text-base font-semibold text-black-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
+            <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
               <a href="#love-story" onClick={(e) => scrollToSection(e, 'love-story')} className="cursor-pointer">
                 Chuyện chúng mình
-              </a>A
+              </a>
             </li>
-            <li className="text-base font-semibold text-black-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
+            <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
               <a href="#wedding-plan" onClick={(e) => scrollToSection(e, 'wedding-plan')} className="cursor-pointer">
                 Lịch trình
               </a>
             </li>
-            <li className="text-base font-semibold text-black-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
+            <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
               <a href="#album" onClick={(e) => scrollToSection(e, 'album')} className="cursor-pointer">
                 Album
               </a>
             </li>
-            <li className="text-base font-semibold text-black-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
+            <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
               <Link href="#about" onClick={() => setNavbar(!navbar)}>
                 Thiệp cưới
               </Link>
             </li>
           </ul>
           <div className="absolute bottom-36 left-0 right-0">
-            <p className='text-gray-500 text-center'>Force G. Studio © 2024</p>
+            <p className='text-gray-500 text-center'>Đức Dương & Kim Ngân © 2025</p>
           </div>
         </div>
       </nav>

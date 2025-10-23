@@ -19,8 +19,8 @@ const sansita = Sansita({
 });
 
 export const metadata: Metadata = {
-  title: "Froce Studio",
-  description: "CopyRight Froce Studio 2024",
+  title: "Dương & Kim Ngân Wedding",
+  description: "CopyRight Dương & Kim Ngân 2025",
   icons: [
     {
       url: '/asset/pictures/icon/favicon.ico',
