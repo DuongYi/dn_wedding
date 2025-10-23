@@ -27,6 +27,49 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ speed = 1, smoothness = 0.1
       targetScroll = Math.max(0, Math.min(targetScroll, document.documentElement.scrollHeight - window.innerHeight));
     };
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Only handle if not focused on input/textarea
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      const scrollAmount = 600; // Giảm từ 800 để mượt hơn
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+      switch (e.key) {
+        case 'ArrowUp':
+          e.preventDefault();
+          targetScroll = Math.max(0, targetScroll - scrollAmount);
+          break;
+
+        case 'ArrowDown':
+          e.preventDefault();
+          targetScroll = Math.min(maxScroll, targetScroll + scrollAmount);
+          break;
+
+        case 'Home':
+          e.preventDefault();
+          targetScroll = 0;
+          break;
+
+        case 'End':
+          e.preventDefault();
+          targetScroll = maxScroll;
+          break;
+
+        case 'PageUp':
+          e.preventDefault();
+          targetScroll = Math.max(0, targetScroll - window.innerHeight);
+          break;
+
+        case 'PageDown':
+          e.preventDefault();
+          targetScroll = Math.min(maxScroll, targetScroll + window.innerHeight);
+          break;
+      }
+    };
+
     const smoothScrollAnimation = () => {
       // Check if scroll position changed externally (programmatic scroll)
       const actualScroll = window.scrollY;
@@ -55,9 +98,11 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ speed = 1, smoothness = 0.1
 
     // Thêm event listener với passive: false để có thể preventDefault
     window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
       window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeyDown);
       cancelAnimationFrame(animationFrameId);
     };
   }, [speed, smoothness]);

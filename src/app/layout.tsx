@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sansita.className}>
-        <SmoothScroll speed={1} smoothness={0.1} />
+        <SmoothScroll speed={0.5} smoothness={0.05} />
         <FallingHearts />
         <MusicPlayer />
         {children}
