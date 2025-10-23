@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 
 const WeddingPlan: React.FC = () => {
@@ -27,7 +30,13 @@ const WeddingPlan: React.FC = () => {
 
             <div className="space-y-8 md:space-y-12">
               {/* Timeline Item 1 - Left */}
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
+              <motion.div
+                className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              >
                 <div className="md:text-right md:pr-8 order-2 md:order-1">
                   <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                     <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-2">Lễ Ăn Hỏi</h3>
@@ -53,10 +62,16 @@ const WeddingPlan: React.FC = () => {
                 <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white border-4 border-red-400 rounded-full items-center justify-center z-10">
                   <span className="text-red-500 text-xl">♥</span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Timeline Item 2 - Right */}
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
+              <motion.div
+                className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              >
                 {/* Ảnh bên trái */}
                 <div className="md:pr-8 flex items-center justify-center md:justify-end order-1">
                   <div className="relative w-40 h-40 md:w-50 md:h-50">
@@ -83,10 +98,16 @@ const WeddingPlan: React.FC = () => {
                 <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white border-4 border-red-400 rounded-full items-center justify-center z-10">
                   <span className="text-red-500 text-xl">♥</span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Timeline Item 3 - Left */}
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
+              <motion.div
+                className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              >
                 <div className="md:text-right md:pr-8 order-2 md:order-1">
                   <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                     <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-2">Lễ Thành Hôn</h3>
@@ -112,7 +133,7 @@ const WeddingPlan: React.FC = () => {
                 <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white border-4 border-red-400 rounded-full items-center justify-center z-10">
                   <span className="text-red-500 text-xl">♥</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
