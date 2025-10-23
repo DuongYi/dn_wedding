@@ -3,17 +3,25 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Loading() {
+interface LoadingProps {
+  onLoadingComplete?: () => void;
+}
+
+export default function Loading({ onLoadingComplete }: LoadingProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Simulate loading time (2-3 seconds)
     const timer = setTimeout(() => {
       setIsLoading(false);
+      // Gọi callback khi loading xong
+      if (onLoadingComplete) {
+        onLoadingComplete();
+      }
     }, 2500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [onLoadingComplete]);
 
   return (
     <AnimatePresence>
@@ -22,7 +30,7 @@ export default function Loading() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-9999 flex items-center justify-center bg-white"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
         >
           <div className="relative flex items-center justify-center">
             {/* Circular Loading Animation */}
