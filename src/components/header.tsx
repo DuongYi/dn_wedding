@@ -164,13 +164,13 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                 />
               </div>
             </Link>
-            <nav className="absolute left-1/2 transform -translate-x-1/2 max-md:hidden">
+            <nav className="absolute left-1/2 transform -translate-x-1/2 max-xl:hidden">
               <ul className="flex">
                 <li>
                   <a
                     href="#top"
                     onClick={(e) => scrollToSection(e, 'top')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'top' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'top' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Wedding
                   </a>
@@ -179,7 +179,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#introduce"
                     onClick={(e) => scrollToSection(e, 'introduce')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'introduce' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'introduce' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Cặp đôi
                   </a>
@@ -188,7 +188,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#love-story"
                     onClick={(e) => scrollToSection(e, 'love-story')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'love-story' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'love-story' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Chuyện chúng mình
                   </a>
@@ -197,7 +197,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#wedding-plan"
                     onClick={(e) => scrollToSection(e, 'wedding-plan')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'wedding-plan' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'wedding-plan' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Lịch trình
                   </a>
@@ -206,13 +206,13 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#album"
                     onClick={(e) => scrollToSection(e, 'album')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'album' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'album' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Album
                   </a>
                 </li>
                 <li>
-                  <Link href="/" className="text-black hover:text-pink-500 relative w-fit font-bold text-xl ml-6 after:content-[''] after:bg-pink-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center font-roboto transition-colors duration-300">
+                  <Link href="/" className="text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:opacity-0 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:duration-300 after:origin-center font-roboto transition-colors duration-300">
                     Thiệp cưới
                   </Link>
                 </li>
@@ -220,7 +220,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
             </nav>
 
             {/* HAMBURGER BUTTON FOR MOBILE */}
-            <div className="md:hidden mx-4">
+            <div className="xl:hidden mx-4">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
                 onClick={toggleMenu}
@@ -258,7 +258,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
         </div>
 
         <div
-          className={`absolute left-0 right-0 top-full z-30 bg-white pb-3 md:pb-0 md:mt-0 xl:hidden ${navbar ? 'xl:p-0 block' : 'hidden'
+          className={`absolute left-0 right-0 top-full z-1000 bg-white pb-3 md:pb-0 md:mt-0 xl:hidden ${navbar ? 'xl:p-0 block' : 'hidden'
             }`}
         >
           <ul className="h-screen md:h-auto items-center justify-center md:flex w-full">
@@ -293,7 +293,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
               </Link>
             </li>
           </ul>
-          <div className="absolute bottom-36 left-0 right-0">
+          <div className="absolute bottom-36 left-0 right-0 md:hidden">
             <p className='text-gray-500 text-center'>Đức Dương & Kim Ngân © 2025</p>
           </div>
         </div>
