@@ -9,21 +9,41 @@ const WeddingPlan: React.FC = () => {
   return (
     <section className="flex flex-col lg:flex-row w-full bg-white" id="wedding-plan">
       {/* Left: Image - Hidden on mobile */}
-      <div className="hidden lg:block flex-1 relative w-full lg:w-1/2">
+      <motion.div
+        className="hidden lg:block flex-1 relative w-full lg:w-1/2"
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
         <div className="bg-[url('/asset/pictures/wedding/ac3.png')] h-full min-h-[600px] bg-cover bg-no-repeat bg-center object-fill" ></div>
-      </div>
+      </motion.div>
       {/* Right: Plan Content */}
       <div className="relative flex-1 flex items-center justify-center bg-[#fafafa] px-4 md:px-8 lg:px-16">
         <div className="w-full py-12 md:py-16 lg:py-20 rounded-[100px">
-          <div className="mb-8 md:mb-10">
+          <motion.div
+            className="mb-8 md:mb-10"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
             <div className="flex flex-col items-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-fz-manstein text-gray-800 mb-4 md:mb-6">Đức Dương</h1>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-fz-manstein text-gray-800 mb-4 md:mb-6 lg:ml-28">Kim Ngân</h1>
             </div>
-          </div>
+          </motion.div>
           {/* Lịch trình */}
           <div className="relative px-4 md:px-8 lg:px-12">
-            <h2 className="text-3xl md:text-4xl text-gray-800 mb-8 md:mb-12 text-center">Lịch Trình</h2>
+            <motion.h2
+              className="text-3xl md:text-4xl text-gray-800 mb-8 md:mb-12 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              Lịch Trình
+            </motion.h2>
 
             {/* Timeline vertical line - Hidden on mobile */}
             <div className="hidden md:block absolute left-1/2 top-20 bottom-0 w-0.5 bg-gray-300 transform -translate-x-1/2"></div>
