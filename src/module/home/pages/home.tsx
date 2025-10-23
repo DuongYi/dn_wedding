@@ -8,6 +8,7 @@ import Introduce from "../components/introduce";
 import LoveStory from "../components/love_story";
 import WeddingPlan from "../components/wedding_plan";
 import Album from "../components/album";
+import OurLoveStory from "../components/our_love_story";
 
 
 const HomePage: React.FC = () => {
@@ -18,9 +19,10 @@ const HomePage: React.FC = () => {
       <HomeContent>
         <BodyTop />
         <Introduce />
-        <LoveStory />
+        <OurLoveStory />
         <WeddingPlan />
         <Album />
+        {/* <LoveStory /> */}
       </HomeContent>
     </div>
   );
