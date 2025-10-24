@@ -52,7 +52,7 @@ const invitationData = [
 const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
   return (
     <div className="relative w-full bg-linear-to-br from-pink-50 via-white to-pink-50 flex items-center justify-center py-20 px-4">
-      <div className="flex flex-col relative z-50 max-w-4xl w-full">
+      <div className="flex flex-col relative z-10 max-w-4xl w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
