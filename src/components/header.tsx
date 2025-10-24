@@ -249,8 +249,8 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                 </li>
                 <li>
                   <Link
-                    href="/invitation"
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto transition-colors duration-300 ${pathname === '/invitation' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    href="/wedding-invitations"
+                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto transition-colors duration-300 ${pathname === '/wedding-invitations' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Thiệp cưới
                   </Link>
@@ -326,8 +326,8 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                 Album
               </a>
             </li>
-            <li className={`text-base font-semibold py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent ${pathname === '/invitation' ? 'bg-pink-50 text-pink-600' : 'text-gray-800'}`}>
-              <Link href="/invitation" onClick={() => setNavbar(!navbar)}>
+            <li className={`text-base font-semibold py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent ${pathname === '/wedding-invitations' ? 'bg-pink-50 text-pink-600' : 'text-gray-800'}`}>
+              <Link href="/wedding-invitations" onClick={() => setNavbar(!navbar)}>
                 Thiệp cưới
               </Link>
             </li>

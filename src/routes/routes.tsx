@@ -12,8 +12,13 @@ export const routes: RouteConfig[] = [
   },
   {
     path: '/invitation',
-    label: 'Thiệp cưới',
+    label: 'Thiệp cưới Preivew',
     id: 'invitation',
+  },
+  {
+    path: '/wedding-invitation',
+    label: 'Chi tiết thiệp cưới',
+    id: 'wedding-invitation',
   },
   {
     path: '/invitation-management',

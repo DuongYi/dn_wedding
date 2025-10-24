@@ -189,7 +189,7 @@ const InvitationCard: React.FC = () => {
         </div>
 
         {/* Footer Decoration */}
-        <div className="h-4 bg-gradient-to-r from-pink-300 via-pink-200 to-pink-300"></div>
+        <div className="h-4 bg-linear-to-r from-pink-300 via-pink-200 to-pink-300"></div>
       </motion.div>
     </div>
   );
