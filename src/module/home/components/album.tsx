@@ -130,26 +130,28 @@ const Album: React.FC = () => {
       {/* Fullscreen Dialog */}
       {selectedPhoto !== null && (
         <div
-          className="fixed inset-0 bg-black/90 z-9999 flex items-center justify-center p-2 md:p-4"
+          className="fixed inset-0 bg-black/90 z-9999 flex items-center justify-center p-4"
           onClick={() => setSelectedPhoto(null)}
         >
           <button
-            className="absolute top-2 right-2 md:top-4 md:right-4 text-white text-3xl md:text-4xl hover:text-gray-300 transition-colors z-10"
+            className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-10"
             onClick={() => setSelectedPhoto(null)}
+            aria-label="Đóng"
           >
             ×
           </button>
 
-          <div className="relative w-full h-full max-w-6xl max-h-[90vh] flex items-center justify-center">
-            <div className="relative bg-white p-[6px] md:p-[10px] max-w-full max-h-full">
-              <div className="relative w-auto h-auto max-w-[calc(100vw-40px)] md:max-w-[calc(100vw-100px)] max-h-[calc(90vh-40px)] md:max-h-[calc(90vh-100px)]">
+          <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative bg-white p-2 shadow-2xl max-w-[90vw] max-h-[90vh]">
+              <div className="relative w-full h-full">
                 <Image
                   src={photos[selectedPhoto].src}
                   alt={photos[selectedPhoto].alt}
-                  width={800}
-                  height={1200}
-                  className="w-auto h-auto max-w-full max-h-full object-contain"
+                  width={1200}
+                  height={1600}
+                  className="w-auto h-auto max-w-full max-h-[85vh] object-contain"
                   onClick={(e) => e.stopPropagation()}
+                  priority
                 />
               </div>
             </div>
@@ -158,13 +160,14 @@ const Album: React.FC = () => {
           {/* Navigation buttons */}
           {selectedPhoto > 0 && (
             <button
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/50 rounded-full w-10 h-10 md:w-14 md:h-14 flex items-center justify-center"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/50 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center"
               onClick={(e) => {
                 e.stopPropagation()
                 setSelectedPhoto(selectedPhoto - 1)
               }}
+              aria-label="Ảnh trước"
             >
-              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -172,13 +175,14 @@ const Album: React.FC = () => {
 
           {selectedPhoto < photos.length - 1 && (
             <button
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/50 rounded-full w-10 h-10 md:w-14 md:h-14 flex items-center justify-center"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/50 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center"
               onClick={(e) => {
                 e.stopPropagation()
                 setSelectedPhoto(selectedPhoto + 1)
               }}
+              aria-label="Ảnh sau"
             >
-              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
