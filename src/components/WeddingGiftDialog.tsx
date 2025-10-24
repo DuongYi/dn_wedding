@@ -63,7 +63,7 @@ const WeddingGiftDialog: React.FC<WeddingGiftDialogProps> = ({ isOpen, onClose }
                 />
               </svg>
             </div> */}
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 font-felidae mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
               Mừng Cưới
             </h2>
             <p className="text-gray-600 text-sm md:text-base">

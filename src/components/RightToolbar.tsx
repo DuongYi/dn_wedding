@@ -2,10 +2,12 @@
 
 import React, { useState } from 'react'
 import WeddingGiftDialog from './WeddingGiftDialog'
+import AddressDialog from './AddressDialog'
 
 const RightToolbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isGiftDialogOpen, setIsGiftDialogOpen] = useState(false)
+  const [isAddressDialogOpen, setIsAddressDialogOpen] = useState(false)
 
   const toggleToolbar = () => {
     setIsOpen(!isOpen)
@@ -15,9 +17,8 @@ const RightToolbar: React.FC = () => {
     setIsGiftDialogOpen(true)
   }
 
-  const handleSendWishes = () => {
-    // TODO: Add send wishes functionality
-    console.log('Gửi lời chúc clicked')
+  const handleViewAddress = () => {
+    setIsAddressDialogOpen(true)
   }
 
   return (
@@ -26,6 +27,12 @@ const RightToolbar: React.FC = () => {
       <WeddingGiftDialog
         isOpen={isGiftDialogOpen}
         onClose={() => setIsGiftDialogOpen(false)}
+      />
+
+      {/* Address Dialog - Render at root level */}
+      <AddressDialog
+        isOpen={isAddressDialogOpen}
+        onClose={() => setIsAddressDialogOpen(false)}
       />
 
       <div className="fixed right-0 -bottom-10 -translate-y-1/2 z-50">
@@ -58,12 +65,12 @@ const RightToolbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Gửi lời chúc - Send Wishes */}
+          {/* Xem địa chỉ - View Address */}
           <div className="relative group/tooltip">
             <button
-              onClick={handleSendWishes}
+              onClick={handleViewAddress}
               className="w-10 h-10 md:w-14 md:h-14 bg-linear-to-br from-pink-400 to-pink-600 rounded-l-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
-              aria-label="Gửi lời chúc"
+              aria-label="Xem địa chỉ"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -71,13 +78,13 @@ const RightToolbar: React.FC = () => {
                 fill="white"
                 className="w-5 h-5 md:w-7 md:h-7 group-hover:scale-110 transition-transform"
               >
-                <path d="M20 4L3 11L10 14M20 4L13 21L10 14M20 4L10 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
               </svg>
             </button>
             {/* Tooltip */}
             <div className="absolute right-full mr-2 top-1/2 -translate-y-1/2 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-200 pointer-events-none">
               <div className="bg-gray-900 text-white px-3 py-2 rounded-lg shadow-lg whitespace-nowrap text-sm">
-                Gửi lời chúc
+                Xem địa chỉ
                 <div className="absolute left-full top-1/2 -translate-y-1/2 border-8 border-transparent border-l-gray-900"></div>
               </div>
             </div>
