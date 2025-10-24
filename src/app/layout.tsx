@@ -5,6 +5,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import FallingHearts from "@/components/FallingHearts";
 import MusicPlayer from "@/components/MusicPlayer";
+import RightToolbar from "@/components/RightToolbar";
 import Loading from "@/components/Loading";
 import LayoutWrapper from "@/routes/layout_wrapper";
 import { useState, useEffect } from "react";
@@ -53,6 +54,7 @@ export default function RootLayout({
             <SmoothScroll speed={0.5} smoothness={0.05} />
             <FallingHearts />
             <MusicPlayer />
+            <RightToolbar />
             <LayoutWrapper>
               {children}
             </LayoutWrapper>
