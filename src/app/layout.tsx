@@ -1,6 +1,6 @@
 "use client";
 
-import { Sansita } from "next/font/google";
+import { Sansita, Sarabun } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import FallingHearts from "@/components/FallingHearts";
@@ -14,6 +14,13 @@ const sansita = Sansita({
   weight: ["400", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-sansita",
+  display: "swap",
+});
+
+const sarabun = Sarabun({
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-sarabun",
   display: "swap",
 });
 
@@ -45,7 +52,7 @@ export default function RootLayout({
         <meta name="description" content="CopyRight Dương & Kim Ngân 2025" />
         <link rel="icon" href="/asset/pictures/icon/favicon.ico" />
       </head>
-      <body className={sansita.className}>
+      <body className={sarabun.className}>
         <Loading onLoadingComplete={() => setIsLoaded(true)} />
 
         {/* Chỉ render nội dung khi loading hoàn thành */}

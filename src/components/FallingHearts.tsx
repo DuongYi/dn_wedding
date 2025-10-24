@@ -39,7 +39,7 @@ const FallingHearts: React.FC = () => {
   }, [])
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-9999 overflow-hidden">
       {hearts.map(heart => (
         <div
           key={heart.id}

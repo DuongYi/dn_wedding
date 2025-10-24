@@ -14,15 +14,23 @@ const Footer: React.FC = () => {
         <div className="absolute inset-0 bg-white/50" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-16">
+      <div className="relative max-w-7xl mx-auto px-6 pt-12 pb-8">
         {/* Brand + Names */}
         <div className="flex flex-col items-center text-center gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-md tracking-widest text-rose-500">Sự hiện diện của các bạn là món quà quý giá nhất đối với chúng tôi!</span>
+            <span className="text:md md:text-lg tracking-widest text-rose-500 mb-3">Sự hiện diện của các bạn là món quà quý giá nhất đối với chúng tôi!</span>
           </div>
-          <h3 className="font-fz-manstein text-4xl sm:text-5xl text-gray-800 mt-4">
-            Đức Dương &amp; Kim Ngân
-          </h3>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <h3 className="text-4xl md:text-5xl text-gray-800 font-fz-manstein">
+              Đức Dương
+            </h3>
+            <span className="text-4xl md:text-5xl text-gray-800 font-fz-manstein">
+              &
+            </span>
+            <h3 className="text-4xl md:text-5xl text-gray-800 font-fz-manstein">
+              Kim Ngân
+            </h3>
+          </div>
         </div>
 
         {/* Event quick info */}
