@@ -14,7 +14,7 @@ const invitationData = [
   {
     name: "Thiệp cưới T7 nhà trai",
     type: 0,
-    time: "16:15 - 09.11.2025",
+    time: "16:15 - 08.11.2025",
     date: "Thời gian: 16:15 - 08 tháng 11, 2025 | Tức 19.09 năm Ất Tỵ",
     day: "Thứ 7",
     location: "Thôn Luật Nội Tây, Xã Quang Lịch, Tỉnh Hưng Yên",
