@@ -14,7 +14,7 @@ const invitationData = [
   {
     name: "Thiệp cưới T7 nhà trai",
     type: 0,
-    time: "16:15 - 08.11.2025",
+    time: "16 Giờ - 08.11.2025",
     date: "Thời gian: 16:15 - 08 tháng 11, 2025 | Tức 19.09 năm Ất Tỵ",
     day: "Thứ 7",
     location: "Thôn Luật Nội Tây, Xã Quang Lịch, Tỉnh Hưng Yên",
@@ -118,7 +118,7 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
               transition={{ delay: 1.2, duration: 0.8 }}
               className="text-gray-600 text-base md:text-lg leading-relaxed"
             >
-              Đến dự buổi tiệc chung vui cùng gia đình chúng tôi
+              Tới dự bữa cơm thân mật chung vui cùng gia đình chúng tôi
             </motion.p>
           </div>
         </motion.div>
@@ -131,9 +131,6 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-center mb-8"
           >
-            <p className="text-gray-600 text-lg md:text-xl mb-6 font-light">
-              Lễ Thành Hôn
-            </p>
             <div className="flex items-center justify-center gap-4 mb-6">
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
@@ -174,7 +171,7 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
             {/* Date & Time */}
             <div className="text-center border-t border-b border-pink-200 py-6">
               <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">
-                Ngày
+                ĐƯỢC TỔ CHỨC VÀO
               </p>
               <p className="text-2xl md:text-3xl font-semibold text-gray-800">
                 {invitationData[type].time}
@@ -224,7 +221,7 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
             className="text-center"
           >
             <p className="text-gray-600 text-lg md:text-xl italic mb-4">
-              Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi!
+              Sự hiện diện của quý khách là niềm vinh hạnh cho gia đình chúng tôi!
             </p>
             <div className="flex justify-center gap-4">
               <button className="px-8 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors duration-300 font-semibold">
@@ -235,6 +232,115 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
               </button>
             </div>
           </motion.div>
+        </div>
+
+        {/* Lễ Thành Hôn */}
+        <div className="bg-linear-to-br from-pink-50 via-white to-purple-50 py-12 px-8">
+          <div className="max-w-4xl mx-auto">
+            {/* Tiêu đề Lễ Thành Hôn */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.7, duration: 0.8 }}
+              className="text-center mb-8"
+            >
+              <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                Lễ Thành Hôn
+              </h2>
+
+              {/* Tên chú rể và cô dâu */}
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <h3 className="text-3xl md:text-4xl text-pink-600 font-fz-manstein">
+                  Đức Dương
+                </h3>
+                <span className="text-2xl md:text-3xl text-pink-400 font-fz-manstein">
+                  &
+                </span>
+                <h3 className="text-3xl md:text-4xl text-pink-600 font-fz-manstein">
+                  Kim Ngân
+                </h3>
+              </div>
+            </motion.div>
+
+            {/* Thời gian tổ chức */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.9, duration: 0.8 }}
+              className="text-center mb-8 p-6 bg-white rounded-xl shadow-md"
+            >
+              <p className="text-gray-600 text-base mb-2">Được tổ chức vào</p>
+              <p className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
+                {invitationData[type].time}
+              </p>
+              <p className="text-lg text-gray-600 mb-1">{invitationData[type].day}</p>
+              <p className="text-sm text-gray-500">{invitationData[type].date}</p>
+            </motion.div>
+
+            {/* Địa điểm */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.1, duration: 0.8 }}
+              className="text-center mb-8"
+            >
+              <p className="text-xl md:text-2xl font-semibold text-gray-800 mb-2">
+                {invitationData[type].addressDescription}
+              </p>
+              <p className="text-gray-600 text-base md:text-lg">
+                {invitationData[type].location}
+              </p>
+            </motion.div>
+
+            {/* Thông tin gia đình */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.3, duration: 0.8 }}
+              className="grid md:grid-cols-2 gap-6 mb-8"
+            >
+              {/* Nhà trai */}
+              <div className="bg-white rounded-xl shadow-md p-6 text-center">
+                <h4 className="text-xl font-bold text-gray-800 mb-4 border-b-2 border-blue-300 pb-2">
+                  Nhà trai
+                </h4>
+                <div className="space-y-2 text-gray-700">
+                  <p className="font-semibold">Bố: Vũ Văn Phố</p>
+                  <p className="font-semibold">Mẹ: Lại Thị Nhung</p>
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <p className="text-lg font-bold text-pink-600">Chú rể: Vũ Đức Dương</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Nhà gái */}
+              <div className="bg-white rounded-xl shadow-md p-6 text-center">
+                <h4 className="text-xl font-bold text-gray-800 mb-4 border-b-2 border-pink-300 pb-2">
+                  Nhà gái
+                </h4>
+                <div className="space-y-2 text-gray-700">
+                  <p className="font-semibold">Bố: Bùi Văn Nghị</p>
+                  <p className="font-semibold">Mẹ: Phạm Thị Thuý</p>
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <p className="text-lg font-bold text-pink-600">Cô dâu: Bùi Thị Kim Ngân</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Lời kết */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.5, duration: 0.8 }}
+              className="text-center"
+            >
+              <p className="text-2xl md:text-3xl font-light text-gray-800 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                Rất hân hạnh được đón tiếp
+              </p>
+              <div className="w-24 h-1 bg-linear-to-r from-transparent via-pink-400 to-transparent mx-auto"></div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Footer Decoration */}
