@@ -62,6 +62,14 @@ const MusicPlayer: React.FC = () => {
           </>
         )}
 
+        {/* Attention animation when paused */}
+        {!isPlaying && (
+          <>
+            <span className="absolute inline-flex h-[120%] w-[120%] rounded-full border-2 border-pink-400 opacity-75 animate-ping"></span>
+            <span className="absolute inline-flex h-[110%] w-[110%] rounded-full border-2 border-pink-300 opacity-50 animate-pulse"></span>
+          </>
+        )}
+
         {/* Icon */}
         <div className="relative z-10">
           {isPlaying ? (
