@@ -24,7 +24,13 @@ export const routes: RouteConfig[] = [
     path: '/invitation-management',
     label: 'Quản lý thiệp mời',
     id: 'invitation-management',
+  },
+  {
+    path: '/photo-album',
+    label: 'Album Ảnh',
+    id: 'photo-album',
   }
+
 ];
 
 export const getRouteByPath = (path: string): RouteConfig | undefined => {
