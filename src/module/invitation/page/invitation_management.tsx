@@ -80,6 +80,11 @@ const InvitationManagement: React.FC = () => {
     }
   }
 
+  const handleView = (invitation: Invitation) => {
+    // Navigate to invitation view page with ID
+    window.open(`/invitation/${invitation.id}`, '_blank')
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (editingInvitation) {
@@ -194,6 +199,32 @@ const InvitationManagement: React.FC = () => {
                     <td className="px-6 py-4 text-right">
                       <div className="flex gap-2 justify-end">
                         <button
+                          onClick={() => handleView(invitation)}
+                          className="p-2 text-green-500 hover:bg-green-50 rounded-lg"
+                          title="Xem"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            className="w-5 h-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                            />
+                          </svg>
+                        </button>
+                        <button
                           onClick={() => handleEdit(invitation)}
                           className="p-2 text-blue-500 hover:bg-blue-50 rounded-lg"
                           title="Sửa"
@@ -271,8 +302,8 @@ const InvitationManagement: React.FC = () => {
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
                 className={`p-2 rounded-lg ${currentPage === 1
-                    ? 'text-gray-300 cursor-not-allowed'
-                    : 'text-gray-600 hover:bg-gray-100'
+                  ? 'text-gray-300 cursor-not-allowed'
+                  : 'text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 <svg
@@ -305,8 +336,8 @@ const InvitationManagement: React.FC = () => {
                         key={page}
                         onClick={() => handlePageChange(page)}
                         className={`px-3 py-1 rounded-lg text-sm ${currentPage === page
-                            ? 'bg-pink-500 text-white'
-                            : 'text-gray-600 hover:bg-gray-100'
+                          ? 'bg-pink-500 text-white'
+                          : 'text-gray-600 hover:bg-gray-100'
                           }`}
                       >
                         {page}
@@ -328,8 +359,8 @@ const InvitationManagement: React.FC = () => {
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
                 className={`p-2 rounded-lg ${currentPage === totalPages
-                    ? 'text-gray-300 cursor-not-allowed'
-                    : 'text-gray-600 hover:bg-gray-100'
+                  ? 'text-gray-300 cursor-not-allowed'
+                  : 'text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 <svg
@@ -364,6 +395,7 @@ const InvitationManagement: React.FC = () => {
                 invitation={invitation}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
+                onView={handleView}
               />
             ))
           )}
@@ -395,8 +427,8 @@ const InvitationManagement: React.FC = () => {
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
                 className={`p-2 rounded-lg ${currentPage === 1
-                    ? 'text-gray-300 cursor-not-allowed'
-                    : 'text-gray-600 hover:bg-gray-100'
+                  ? 'text-gray-300 cursor-not-allowed'
+                  : 'text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 <svg
@@ -423,8 +455,8 @@ const InvitationManagement: React.FC = () => {
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
                 className={`p-2 rounded-lg ${currentPage === totalPages
-                    ? 'text-gray-300 cursor-not-allowed'
-                    : 'text-gray-600 hover:bg-gray-100'
+                  ? 'text-gray-300 cursor-not-allowed'
+                  : 'text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 <svg
