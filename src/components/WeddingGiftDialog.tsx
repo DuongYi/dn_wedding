@@ -73,7 +73,7 @@ const WeddingGiftDialog: React.FC<WeddingGiftDialogProps> = ({ isOpen, onClose }
           {/* QR Codes Grid */}
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {/* Cô Dâu - Bride */}
-            <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 shadow-lg">
+            <div className="bg-linear-to-br from-pink-50 to-rose-50 rounded-2xl p-6 shadow-lg">
               <div className="text-center mb-4">
                 {/* <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-pink-100 mb-3">
                   <svg
@@ -133,7 +133,7 @@ const WeddingGiftDialog: React.FC<WeddingGiftDialogProps> = ({ isOpen, onClose }
             </div>
 
             {/* Chú Rể - Groom */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-lg">
+            <div className="bg-linear-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-lg">
               <div className="text-center mb-4">
                 {/* <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-3">
                   <svg

@@ -1,11 +1,10 @@
-import React from "react";
-import InvitationPage from "@/module/invitation/page/invitation";
+import InvitationManagement from "@/module/invitation/page/invitation_management";
 import LayoutWrapper from "@/routes/layout_wrapper";
 
-export default function Invitation() {
+export default function InvitationManagementPage() {
   return (
     <LayoutWrapper showHeader={true} headerAlwaysShow={true} showFooter={false}>
-      <InvitationPage />
+      <InvitationManagement />
     </LayoutWrapper>
   );
 }

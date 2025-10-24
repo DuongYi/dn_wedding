@@ -59,8 +59,9 @@ const Footer: React.FC = () => {
         <div className="mt-10 pt-6 border-t border-rose-100 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">© 2025 Đức Dương &amp; Kim Ngân. All rights reserved.</p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <a href="#">Điều khoản</a>
-            <a href="#">Quyền riêng tư</a>
+            <a href="/invitation-management" className="hover:text-pink-500 transition-colors">Tạo Thiệp</a>
+            <a href="#" className="hover:text-pink-500 transition-colors">Điều khoản</a>
+            <a href="#" className="hover:text-pink-500 transition-colors">Quyền riêng tư</a>
           </div>
         </div>
       </div>
