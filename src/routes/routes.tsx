@@ -29,8 +29,12 @@ export const routes: RouteConfig[] = [
     path: '/photo-album',
     label: 'Album Ảnh',
     id: 'photo-album',
+  },
+  {
+    path: '/countdown',
+    label: 'Đếm ngược',
+    id: 'count-down',
   }
-
 ];
 
 export const getRouteByPath = (path: string): RouteConfig | undefined => {

@@ -278,6 +278,12 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                       >
                         Album
                       </Link>
+                      <Link
+                        href="/countdown"
+                        className={`block text-start px-4 py-2 text-[16px] font-semibold transition-colors ${pathname === '/countdown' ? 'bg-pink-50 text-pink-600' : 'text-gray-700 hover:bg-pink-50 hover:text-pink-600'}`}
+                      >
+                        Đếm ngược
+                      </Link>
                     </div>
                   </button>
                 </li>
@@ -388,6 +394,16 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                     className={`block py-3 px-8 text-sm font-medium ${pathname === '/photo-album' ? 'bg-pink-50 text-pink-600' : 'text-gray-700 hover:bg-pink-50 hover:text-pink-600'}`}
                   >
                     Album
+                  </Link>
+                  <Link
+                    href="/countdown"
+                    onClick={() => {
+                      setNavbar(false)
+                      setMobileDropdownOpen(false)
+                    }}
+                    className={`block py-3 px-8 text-sm font-medium ${pathname === '/countdown' ? 'bg-pink-50 text-pink-600' : 'text-gray-700 hover:bg-pink-50 hover:text-pink-600'}`}
+                  >
+                    Đếm ngược
                   </Link>
                 </div>
               )}
