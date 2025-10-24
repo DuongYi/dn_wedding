@@ -44,45 +44,45 @@ const CountdownTimer: React.FC = () => {
   }, [])
 
   return (
-    <div className="flex gap-8 md:gap-16 lg:gap-24 justify-center py-8">
+    <div className="flex gap-3 sm:gap-6 md:gap-12 lg:gap-20 justify-center py-4 md:py-8 px-4 overflow-x-auto">
       {/* Days */}
       <div className="flex flex-col items-center">
-        <div className="relative flex items-center justify-center w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-[#f7eded] border border-[#e7d7d7]">
-          <div className="absolute inset-4 rounded-full border border-[#e7d7d7] flex items-center justify-center">
-            <span className="text-6xl md:text-7xl lg:text-8xl font-felidae text-gray-900 leading-none">{timeLeft.days}</span>
+        <div className="relative flex items-center justify-center w-20 h-20 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full bg-[#f7eded] border border-[#e7d7d7]">
+          <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-full border border-[#e7d7d7] flex items-center justify-center">
+            <span className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-felidae text-gray-900 leading-none">{timeLeft.days}</span>
           </div>
         </div>
-        <span className="mt-6 text-xl md:text-2xl font-felidae text-gray-700">Days</span>
+        <span className="mt-2 sm:mt-4 md:mt-6 text-xs sm:text-base md:text-xl lg:text-2xl font-felidae text-gray-700">Days</span>
       </div>
 
       {/* Hours */}
       <div className="flex flex-col items-center">
-        <div className="relative flex items-center justify-center w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-[#f7eded] border border-[#e7d7d7]">
-          <div className="absolute inset-4 rounded-full border border-[#e7d7d7] flex items-center justify-center">
-            <span className="text-6xl md:text-7xl lg:text-8xl font-felidae text-gray-900 leading-none">{timeLeft.hours}</span>
+        <div className="relative flex items-center justify-center w-20 h-20 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full bg-[#f7eded] border border-[#e7d7d7]">
+          <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-full border border-[#e7d7d7] flex items-center justify-center">
+            <span className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-felidae text-gray-900 leading-none">{timeLeft.hours}</span>
           </div>
         </div>
-        <span className="mt-6 text-xl md:text-2xl font-felidae text-gray-700">Hours</span>
+        <span className="mt-2 sm:mt-4 md:mt-6 text-xs sm:text-base md:text-xl lg:text-2xl font-felidae text-gray-700">Hours</span>
       </div>
 
       {/* Minutes */}
       <div className="flex flex-col items-center">
-        <div className="relative flex items-center justify-center w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-[#f7eded] border border-[#e7d7d7]">
-          <div className="absolute inset-4 rounded-full border border-[#e7d7d7] flex items-center justify-center">
-            <span className="text-6xl md:text-7xl lg:text-8xl font-felidae text-gray-900 leading-none">{timeLeft.minutes}</span>
+        <div className="relative flex items-center justify-center w-20 h-20 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full bg-[#f7eded] border border-[#e7d7d7]">
+          <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-full border border-[#e7d7d7] flex items-center justify-center">
+            <span className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-felidae text-gray-900 leading-none">{timeLeft.minutes}</span>
           </div>
         </div>
-        <span className="mt-6 text-xl md:text-2xl font-felidae text-gray-700">Mins</span>
+        <span className="mt-2 sm:mt-4 md:mt-6 text-xs sm:text-base md:text-xl lg:text-2xl font-felidae text-gray-700">Mins</span>
       </div>
 
       {/* Seconds */}
       <div className="flex flex-col items-center">
-        <div className="relative flex items-center justify-center w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-[#f7eded] border border-[#e7d7d7]">
-          <div className="absolute inset-4 rounded-full border border-[#e7d7d7] flex items-center justify-center">
-            <span className="text-6xl md:text-7xl lg:text-8xl font-felidae text-gray-900 leading-none">{timeLeft.seconds}</span>
+        <div className="relative flex items-center justify-center w-20 h-20 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full bg-[#f7eded] border border-[#e7d7d7]">
+          <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-full border border-[#e7d7d7] flex items-center justify-center">
+            <span className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-felidae text-gray-900 leading-none">{timeLeft.seconds}</span>
           </div>
         </div>
-        <span className="mt-6 text-xl md:text-2xl font-felidae text-gray-700">Secs</span>
+        <span className="mt-2 sm:mt-4 md:mt-6 text-xs sm:text-base md:text-xl lg:text-2xl font-felidae text-gray-700">Secs</span>
       </div>
     </div>
   )
