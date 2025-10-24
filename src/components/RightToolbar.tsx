@@ -1,17 +1,18 @@
 "use client"
 
 import React, { useState } from 'react'
+import WeddingGiftDialog from './WeddingGiftDialog'
 
 const RightToolbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isGiftDialogOpen, setIsGiftDialogOpen] = useState(false)
 
   const toggleToolbar = () => {
     setIsOpen(!isOpen)
   }
 
   const handleWeddingGift = () => {
-    // TODO: Add wedding gift functionality
-    console.log('Mừng cưới clicked')
+    setIsGiftDialogOpen(true)
   }
 
   const handleSendWishes = () => {
@@ -20,8 +21,14 @@ const RightToolbar: React.FC = () => {
   }
 
   return (
-    <div className="fixed right-0 -bottom-10 -translate-y-1/2 z-50">
-      {/* Toolbar Items - Show when open */}
+    <>
+      {/* Wedding Gift Dialog - Render at root level */}
+      <WeddingGiftDialog 
+        isOpen={isGiftDialogOpen} 
+        onClose={() => setIsGiftDialogOpen(false)} 
+      />
+
+      <div className="fixed right-0 -bottom-10 -translate-y-1/2 z-50">
       <div
         className={`flex flex-col gap-2 md:gap-4 transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-[120%] opacity-0'
           }`}
@@ -133,6 +140,7 @@ const RightToolbar: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
