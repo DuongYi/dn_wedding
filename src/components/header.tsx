@@ -14,6 +14,8 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
   const [header, setHeader] = useState(alwaysShow); // Nếu alwaysShow = true thì hiện ngay
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('top'); // Track section hiện tại
+  const [dropdownOpen, setDropdownOpen] = useState(false); // Dropdown state cho desktop
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false); // Dropdown state cho mobile
   const pathname = usePathname(); // Get current route
   const router = useRouter(); // Get router for navigation
 
@@ -184,7 +186,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
   }, [pathname]);
 
   return (
-    <div className="relative">
+    <div className="relative z-100">
       <nav className={`w-full ${header ? `bg-white ${!alwaysShow ? 'shadow-md drop-shadow-sm' : ''}` : 'bg-transparent'} ${alwaysShow ? '' : 'fixed z-50 left-0 right-0 transition-all duration-450'} ${header ? 'top-0' : '-top-24'}`}>
         <div className="">
           <div className="container max-w-[1730px] mx-auto flex justify-between items-center py-2 max-md:justify-between">
@@ -206,7 +208,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#top"
                     onClick={(e) => scrollToSection(e, 'top')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'top' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === 'top' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Wedding
                   </a>
@@ -215,7 +217,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#introduce"
                     onClick={(e) => scrollToSection(e, 'introduce')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'introduce' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === 'introduce' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Cặp đôi
                   </a>
@@ -224,7 +226,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#love-story"
                     onClick={(e) => scrollToSection(e, 'love-story')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'love-story' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === 'love-story' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Chuyện chúng mình
                   </a>
@@ -233,7 +235,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#wedding-plan"
                     onClick={(e) => scrollToSection(e, 'wedding-plan')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'wedding-plan' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === 'wedding-plan' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Lịch trình
                   </a>
@@ -242,18 +244,42 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                   <a
                     href="#album"
                     onClick={(e) => scrollToSection(e, 'album')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto cursor-pointer transition-colors duration-300 ${activeSection === 'album' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === 'album' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Album
                   </a>
                 </li>
-                <li>
-                  <Link
-                    href="/wedding-invitations"
-                    className={`text-black hover:text-pink-500 relative w-fit font-bold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-[2px] after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center font-roboto transition-colors duration-300 ${pathname === '/wedding-invitations' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                <li className="relative group">
+                  <button
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  transition-colors duration-300 ${(pathname === '/wedding-invitations' || pathname === '/photo-album') ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'} flex items-center gap-1`}
                   >
-                    Thiệp cưới
-                  </Link>
+                    Khác
+                    {/* <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg> */}
+
+                    {/* Dropdown Menu */}
+                    <div
+                      onMouseEnter={() => setDropdownOpen(true)}
+                      onMouseLeave={() => setDropdownOpen(false)}
+                      className={`absolute top-10 left-0 mt-2 w-48 bg-white drop-shadow-sm py-2 transition-all duration-300 ${dropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2 z-9999'}`}
+                    >
+                      <Link
+                        href="/wedding-invitations"
+                        className={`block text-start px-4 py-2 text-[16px] font-semibold transition-colors ${pathname === '/wedding-invitations' ? 'bg-pink-50 text-pink-600' : 'text-gray-700 hover:bg-pink-50 hover:text-pink-600'}`}
+                      >
+                        Thiệp cưới
+                      </Link>
+                      <Link
+                        href="/photo-album"
+                        className={`block text-start px-4 py-2 text-[16px] font-semibold transition-colors ${pathname === '/photo-album' ? 'bg-pink-50 text-pink-600' : 'text-gray-700 hover:bg-pink-50 hover:text-pink-600'}`}
+                      >
+                        Album
+                      </Link>
+                    </div>
+                  </button>
                 </li>
               </ul>
             </nav>
@@ -326,10 +352,45 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                 Album
               </a>
             </li>
-            <li className={`text-base font-semibold py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent ${pathname === '/wedding-invitations' ? 'bg-pink-50 text-pink-600' : 'text-gray-800'}`}>
-              <Link href="/wedding-invitations" onClick={() => setNavbar(!navbar)}>
-                Thiệp cưới
-              </Link>
+            <li className="text-base font-semibold text-gray-800 border-b border-gray-200">
+              <button
+                onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                className="w-full py-4 px-5 text-start hover:bg-teal-300 hover:text-white flex items-center justify-between"
+              >
+                <span>Khác</span>
+                <svg
+                  className={`w-4 h-4 transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileDropdownOpen && (
+                <div className="bg-gray-50">
+                  <Link
+                    href="/wedding-invitations"
+                    onClick={() => {
+                      setNavbar(false)
+                      setMobileDropdownOpen(false)
+                    }}
+                    className={`block py-3 px-8 text-sm font-medium border-b border-gray-200 ${pathname === '/wedding-invitations' ? 'bg-pink-50 text-pink-600' : 'text-gray-700 hover:bg-pink-50 hover:text-pink-600'}`}
+                  >
+                    Thiệp cưới
+                  </Link>
+                  <Link
+                    href="/photo-album"
+                    onClick={() => {
+                      setNavbar(false)
+                      setMobileDropdownOpen(false)
+                    }}
+                    className={`block py-3 px-8 text-sm font-medium ${pathname === '/photo-album' ? 'bg-pink-50 text-pink-600' : 'text-gray-700 hover:bg-pink-50 hover:text-pink-600'}`}
+                  >
+                    Album
+                  </Link>
+                </div>
+              )}
             </li>
           </ul>
           <div className="absolute bottom-36 left-0 right-0 md:hidden">
