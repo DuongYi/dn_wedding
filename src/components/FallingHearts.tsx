@@ -17,7 +17,7 @@ const FallingHearts: React.FC = () => {
   useEffect(() => {
     // Tạo trái tim mới mỗi 2 giây
     const interval = setInterval(() => {
-      const colors = ['#ff69b4', '#ff1493', '#ffc0cb', '#fff', '#ffb6c1']
+      const colors = ['#ff69b4', '#ff1493', '#ffc0cb', '#fff', '#ffb6c1', '#d80000', '#ff0303']
       const newHeart: Heart = {
         id: Date.now() + Math.random(),
         left: Math.random() * 100,
@@ -33,7 +33,7 @@ const FallingHearts: React.FC = () => {
       setTimeout(() => {
         setHearts(prev => prev.filter(h => h.id !== newHeart.id))
       }, (newHeart.animationDuration + 1) * 1000)
-    }, 800) // Tạo trái tim mới mỗi 0.8 giây
+    }, 500) // Tạo trái tim mới mỗi 0.5 giây
 
     return () => clearInterval(interval)
   }, [])
