@@ -4,46 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-interface InvitationCardProps {
-  name: string;
-  type: number; // 0 - Thiệp cưới T7 nhà trai | 1 - Thiệp cưới CN nhà trai | 2 - Thiệp cưới CN nhà gái
-}
-
-// Tạo data cho từng loại thiệp để bắt theo type 
-const invitationData = [
-  {
-    name: "Thiệp cưới T7 nhà trai",
-    type: 0,
-    time: "16:15 - 09.11.2025",
-    date: "Thời gian: 16:15 - 08 tháng 11, 2025 | Tức 19.09 năm Ất Tỵ",
-    day: "Thứ 7",
-    location: "Thôn Luật Nội Tây, Xã Quang Lịch, Tỉnh Hưng Yên",
-    addressDescription: "Tại gia đình nhà trai",
-
-  },
-  {
-    name: "Thiệp cưới CN nhà trai",
-    type: 1,
-    time: "8:00 - 09.11.2025",
-    date: "Thời gian: 8:00 - 09 tháng 11, 2025 | Tức 20.09 năm Ất Tỵ",
-    day: "Chủ Nhật",
-    location: "Thôn Luật Nội Tây, Xã Quang Lịch, Tỉnh Hưng Yên",
-    addressDescription: "Tại gia đình nhà trai",
-
-  },
-  {
-    name: "Thiệp cưới CN nhà gái",
-    type: 2,
-    time: "8:30 - 09.11.2025",
-    date: "Thời gian: 8:30 - 09 tháng 11, 2025 | Tức 20.09 năm Ất Tỵ",
-    day: "Chủ Nhật",
-    location: "Thôn Cốc, Phú Châu, Tỉnh Hưng Yên",
-    addressDescription: "Tại gia đình nhà gái",
-
-  },
-];
-
-const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
+const WeddingCard: React.FC = () => {
   return (
     <div className="w-full bg-linear-to-br from-pink-50 via-white to-pink-50 flex items-center justify-center py-20 px-4">
       <motion.div
@@ -94,16 +55,6 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
             >
               Trân trọng kính mời
             </motion.h3>
-
-            <motion.h2
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-2xl md:text-3xl font-light text-gray-800 mb-3 tracking-wide"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              {name}
-            </motion.h2>
 
             <motion.div
               initial={{ width: 0 }}
@@ -177,10 +128,10 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
                 Ngày
               </p>
               <p className="text-2xl md:text-3xl font-semibold text-gray-800">
-                {invitationData[type].time}
+                09 tháng 11, 2025
               </p>
               <p className="text-lg md:text-xl text-gray-600 mt-2">
-                {invitationData[type].day}
+                Chủ Nhật
               </p>
             </div>
 
@@ -190,13 +141,13 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
                 Địa điểm
               </p>
               <p className="text-xl md:text-2xl font-semibold text-gray-800 mb-2">
-                {invitationData[type].addressDescription}
+                TẠI GIA ĐÌNH NHÀ TRAI
               </p>
               <p className="text-gray-600 text-base md:text-lg">
-                {invitationData[type].location}
+                Thôn Luật Nội Tây, Xã Quang Lịch, Tỉnh Hưng Yên
               </p>
               <p className="text-gray-500 text-sm mt-2">
-                {invitationData[type].date}
+                Thời gian: 12:15 - 09.11.2025 | Tức 20.09 năm Ất Tỵ
               </p>
             </div>
           </motion.div>
@@ -244,4 +195,4 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
   );
 };
 
-export default InvitationCard;
+export default WeddingCard;
