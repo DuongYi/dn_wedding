@@ -6,9 +6,21 @@ import Image from 'next/image'
 const Album: React.FC = () => {
   const [isGathered, setIsGathered] = useState(false)
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
     const handleScroll = () => {
       if (!sectionRef.current) return
 
@@ -32,7 +44,10 @@ const Album: React.FC = () => {
     window.addEventListener('scroll', handleScroll)
     handleScroll() // Initial call
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', checkMobile)
+    }
   }, [])
 
   const photos = [
@@ -78,6 +93,31 @@ const Album: React.FC = () => {
     },
   ]
 
+  // Touch handlers for mobile carousel
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swipe left - next slide
+      setCurrentSlide((prev) => (prev < photos.length - 1 ? prev + 1 : prev))
+    }
+
+    if (touchStart - touchEnd < -75) {
+      // Swipe right - previous slide
+      setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev))
+    }
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
   return (
     <section
       ref={sectionRef}
@@ -89,42 +129,96 @@ const Album: React.FC = () => {
           Our Memories
         </h2>
 
-        <div className="relative h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center">
-          {photos.map((photo, index) => {
-            // Use custom positions for spread and gathered states
-            const currentLeft = isGathered ? photo.position.gathered.left : photo.position.spread.left
-            const currentTop = isGathered ? photo.position.gathered.top : photo.position.spread.top
-
-            // When gathered, center image (index 2) gets highest zIndex
-            const currentZIndex = isGathered && index === 2 ? 100 : photo.zIndex
-
-            return (
+        {/* Mobile Carousel */}
+        {isMobile ? (
+          <div className="relative">
+            <div
+              className="overflow-hidden"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div
-                key={index}
-                onClick={() => setSelectedPhoto(index)}
-                className="absolute transition-all duration-1500 ease-in-out hover:scale-110 hover:z-50 hover:rotate-0 cursor-pointer"
-                style={{
-                  transform: `rotate(${photo.rotation}deg) scale(${photo.scale})`,
-                  zIndex: currentZIndex,
-                  left: `${currentLeft}%`,
-                  top: `${currentTop}%`,
-                }}
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                <div className="relative w-[180px] h-[260px] md:w-[240px] md:h-[350px] lg:w-[320px] lg:h-[460px] bg-white p-[8px] md:p-[10px] shadow-2xl">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={photo.src}
-                      alt={photo.alt}
-                      fill
-                      sizes="(max-width: 768px) 180px, (max-width: 1024px) 240px, 320px"
-                      className="absolute inset-0 object-cover"
-                    />
+                {photos.map((photo, index) => (
+                  <div key={index} className="min-w-full flex justify-center items-center py-8">
+                    <div
+                      onClick={() => setSelectedPhoto(index)}
+                      className="cursor-pointer hover:scale-105 transition-transform duration-300"
+                    >
+                      <div className="relative w-[280px] h-[400px] bg-white p-3 shadow-2xl">
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={photo.src}
+                            alt={photo.alt}
+                            fill
+                            sizes="280px"
+                            className="object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {photos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${currentSlide === index
+                    ? 'bg-gray-800 w-8'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          /* Desktop Spread/Gathered Effect */
+          <div className="relative h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center">
+            {photos.map((photo, index) => {
+              // Use custom positions for spread and gathered states
+              const currentLeft = isGathered ? photo.position.gathered.left : photo.position.spread.left
+              const currentTop = isGathered ? photo.position.gathered.top : photo.position.spread.top
+
+              // When gathered, center image (index 2) gets highest zIndex
+              const currentZIndex = isGathered && index === 2 ? 100 : photo.zIndex
+
+              return (
+                <div
+                  key={index}
+                  onClick={() => setSelectedPhoto(index)}
+                  className="absolute transition-all duration-1500 ease-in-out hover:scale-110 hover:z-50 hover:rotate-0 cursor-pointer"
+                  style={{
+                    transform: `rotate(${photo.rotation}deg) scale(${photo.scale})`,
+                    zIndex: currentZIndex,
+                    left: `${currentLeft}%`,
+                    top: `${currentTop}%`,
+                  }}
+                >
+                  <div className="relative w-[180px] h-[260px] md:w-60 md:h-[350px] lg:w-[320px] lg:h-[460px] bg-white p-2 md:p-2.5 shadow-2xl">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(max-width: 768px) 180px, (max-width: 1024px) 240px, 320px"
+                        className="absolute inset-0 object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
-        </div>
+              )
+            })}
+          </div>
+        )}
       </div>
 
       {/* Fullscreen Dialog */}

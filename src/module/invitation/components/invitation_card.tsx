@@ -139,7 +139,7 @@ const InvitationCard: React.FC<InvitationCardProps> = ({ name, type }) => {
               className="space-y-6 mb-8"
             >
               {/* Date & Time */}
-              <div className="text-center border-t">
+              <div className="text-center">
                 <p className="text-gray-700 text-md md:text-lg uppercase tracking-wider mb-2">
                   ĐƯỢC TỔ CHỨC VÀO
                 </p>
