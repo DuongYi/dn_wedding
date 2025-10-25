@@ -53,7 +53,7 @@ const CountDownPage: React.FC = () => {
               <div className="absolute inset-0 bg-white p-2 md:p-3 shadow-xl">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/asset/pictures/wedding/ac20.png"
+                    src="/asset/pictures/countdown/countdown1.jpg"
                     alt="Groom"
                     fill
                     className="object-cover"
@@ -84,7 +84,7 @@ const CountDownPage: React.FC = () => {
               <div className="absolute inset-0 bg-white p-2 md:p-3 shadow-xl">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/asset/pictures/wedding/ac17.png"
+                    src="/asset/pictures/countdown/countdown2.jpg"
                     alt="Bride"
                     fill
                     className="object-cover"

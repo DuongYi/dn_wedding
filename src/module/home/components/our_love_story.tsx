@@ -13,28 +13,28 @@ type Story = {
 
 const stories: Story[] = [
   {
-    time: "1 ngày nọ năm 2018",
-    title: "First Time We Met",
+    time: "Đà Lạt 2023 & Phú Yên 2024",
+    title: "The Love of Journey",
     text:
-      "Lần đầu gặp vợ là khi bắt đầu học cấp 3, cô ấy ngồi trước tôi trong lớp. Tôi nhớ mãi khoảnh khắc đó, khi ánh mắt chúng tôi chạm nhau lần đầu tiên, tim tôi như lỡ một nhịp. Từ những câu chuyện học hành đến những buổi hẹn hò đầu tiên cần đến 5 năm, kẻ Bắc người Nam, nhưng có lẽ định mệnh đã sắp đặt để chúng tôi gặp nhau và yêu nhau.",
-    leftSrc: "/asset/pictures/wedding/ac22.png",
-    rightSrc: "/asset/pictures/wedding/ac23.png",
+      "Những chuyến đi đến Đà Lạt và Phú Yên đã giúp tình yêu thêm gắn kết, để mỗi vùng đất mới đều là một kỷ niệm ngọt ngào của riêng hai đứa.",
+    leftSrc: "/asset/pictures/love_story/lovestory11.jpg",
+    rightSrc: "/asset/pictures/love_story/lovestory12.jpg",
   },
   {
-    time: "23.1.2025",
-    title: "Where Love Started",
+    time: "Sapa 2025",
+    title: "Fansipan -Roof of Indochina",
     text:
-      "Giữa cái se lạnh của ngày mùng 2 Tết, tôi tỏ tình với cô ấy sau buổi tô tượng đầu năm. Cô ấy bối rối, đắn đo, nhưng rồi cũng mỉm cười nhận lời. Từ đó, những đêm dài trò chuyện, những chuyến bay nối dài yêu thương, và những ngày hạnh phúc bên nhau đã trở thành một phần không thể thiếu của chúng tôi",
-    leftSrc: "/asset/pictures/wedding/ac24.png",
-    rightSrc: "/asset/pictures/wedding/ac25.png",
+      "Fansipan không chỉ là một đỉnh núi, mà còn là lời thề: Vượt qua nắng gió mưa bão, chúng tôi đã cùng nhau chinh phục đỉnh Fansipan. Giờ đây, chúng tôi tiếp tục đồng hành, cùng nhau chinh phục cuộc sống phía trước. Hai trái tim, một ý chí, sẵn sàng viết tiếp chương mới của hành trình trọn đời.",
+    leftSrc: "/asset/pictures/love_story/lovestory21.jpg",
+    rightSrc: "/asset/pictures/love_story/lovestory22.jpg",
   },
   {
     time: "31.12.2024",
     title: "She Said Yes",
     text:
       "Cuối năm 2024, giữa không gian ngập tràn ánh nến và giai điệu dịu êm, tôi dành tặng cô ấy một điều bất ngờ. Khi quỳ xuống và ngỏ lời cầu hôn, cô ấy mỉm cười đầy hạnh phúc. Và rồi, bằng cái gật đầu nhẹ nhàng, chúng tôi bước sang một chương mới của tình yêu.",
-    leftSrc: "/asset/pictures/love_story/lovestory32.jpg",
-    rightSrc: "/asset/pictures/love_story/lovestory31.jpg",
+    leftSrc: "/asset/pictures/love_story/lovestory31.jpg",
+    rightSrc: "/asset/pictures/love_story/lovestory32.jpg",
   },
 ];
 

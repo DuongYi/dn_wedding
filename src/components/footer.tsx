@@ -7,11 +7,11 @@ const Footer: React.FC = () => {
       {/* Blurred background image */}
       <div aria-hidden className="absolute inset-0">
         <img
-          src="/asset/pictures/home/wedding-couple2.jpg"
+          src="/asset/pictures/home/wedding-couple.jpg"
           alt=""
-          className="w-full h-full object-cover blur-xs scale-110 opacity-80"
+          className="w-full h-full object-cover blur-xs object-[80%_20%]"
         />
-        <div className="absolute inset-0 bg-white/50" />
+        <div className="absolute inset-0 bg-white/40" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 pt-12 pb-8">

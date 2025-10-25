@@ -130,8 +130,7 @@ const Hero: React.FC = () => {
             src="/asset/pictures/home/wedding-couple2.jpg"
             alt="Wedding Couple"
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-[60%_40%]  opacity-30 md:opacity-60 lg:opacity-85"
+            className="object-cover object-[60%_40%]  opacity-60 md:opacity-80 lg:opacity-100"
             priority
             quality={100}
           />

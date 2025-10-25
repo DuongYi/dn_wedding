@@ -153,7 +153,7 @@ const BodyTop: React.FC = () => {
         >
           <div className="relative w-[50%] aspect-6/7 overflow-hidden shadow-xl ml-auto">
             <Image
-              src="/asset/pictures/wedding/ac20.png"
+              src="/asset/pictures/wedding/ac11.png"
               alt="Bride portrait"
               fill
               sizes="240px"
