@@ -164,7 +164,7 @@ const OurLoveStory: React.FC = () => {
                       alt={`${s.title} main`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
-                      className="object-cover"
+                      className="object-cover object-[75%_25%] md:object-center"
                     />
                   </div>
                   <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-lg">
@@ -173,7 +173,7 @@ const OurLoveStory: React.FC = () => {
                       alt={`${s.title} detail`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
-                      className="object-cover"
+                      className="object-cover object-[60%_40%] md:object-center"
                     />
                   </div>
                 </div>

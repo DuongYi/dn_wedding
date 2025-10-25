@@ -70,7 +70,7 @@ const Introduce: React.FC = () => {
             </p>
             <div className="relative w-full max-w-[280px] aspect-3/4 overflow-hidden shadow-none lg:shadow-lg  shine-on-hover lg:order-last">
               <Image
-                src="/asset/pictures/member/person_2.jpg"
+                src="/asset/pictures/home/main_nam.jpg"
                 alt="Duc Duong"
                 fill
                 sizes="(max-width: 1024px) 280px, 280px"

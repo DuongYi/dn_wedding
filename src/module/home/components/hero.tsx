@@ -35,13 +35,13 @@ const Hero: React.FC = () => {
   }, [])
 
   return (
-    <section className="relative h-[400px] md:h-[600px] lg:h-[833px] max-w-[1730px] px-2 mx-auto overflow-hidden 2xl:overflow-visible">
+    <section className="relative h-[400px] md:h-[600px] lg:h-[833px] max-w-[1730px] px-2 mx-auto overflow-hidden">
       <div className="relative h-full">
         {/* Desktop Typography */}
         <h2 className="hidden lg:block font-medium mb-0 ml-2 perspective-[400px] font-felidae leading-[400px] relative z-10" aria-label="FOREVER">
           <div aria-hidden="false" className="relative block text-start text-black translate-x-0 translate-y-0 translate-z-0 rotate-0 scale-100 origin-[860px_200px] opacity-100 font-felidae text-[200px] 2xl:text-[290px]">FOREVER</div>
         </h2>
-        <h2 className="hidden lg:block perspective-[400px] absolute z-10 right-[10px] 2xl:right-[350px] bottom-0 font-medium mb-0 ml-2 leading-[400px]" aria-label="AFTER">
+        <h2 className="hidden lg:block perspective-[400px] absolute z-10 right-2.5 2xl:right-[350px] bottom-0 font-medium mb-0 ml-2 leading-[400px]" aria-label="AFTER">
           <div aria-hidden="false" className="relative block text-start text-black translate-x-0 translate-y-0 translate-z-0 rotate-0 scale-100 origin-[406.875px_200px] opacity-100 font-felidae text-[200px] 2xl:text-[290px]">
             AFTER
           </div>
@@ -124,16 +124,16 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Right Image */}
-      <div className="absolute right-0 md:right-[-20px] lg:right-[-50px] top-0 w-full lg:w-1/2 h-full z-0">
+      <div className="absolute right-0 md:right-5 lg:right-[-50px] top-0 w-full lg:w-1/2 h-full z-0">
         <div className="relative w-full h-full">
           <Image
             src="/asset/pictures/home/wedding-couple2.jpg"
             alt="Wedding Couple"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-center md:object-right opacity-30 md:opacity-60 lg:opacity-100"
+            className="object-cover object-[60%_40%]  opacity-30 md:opacity-60 lg:opacity-85"
             priority
-            quality={95}
+            quality={100}
           />
         </div>
       </div>

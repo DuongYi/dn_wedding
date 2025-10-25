@@ -62,7 +62,7 @@ const BodyTop: React.FC = () => {
       {/* Left images column - Hidden on mobile */}
       <div className="hidden xl:block absolute left-0 top-1/2 transform -translate-y-1/2 w-[320px] xl:w-[380px] 2xl:w-[480px]">
         <motion.div
-          className="relative w-[80%] left-[16px] 2xl:left aspect-3/4 overflow-hidden shadow-xl -mb-12"
+          className="relative w-[80%] left-4 2xl:left aspect-3/4 overflow-hidden shadow-xl -mb-12"
           style={getTransform(30)}
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ const BodyTop: React.FC = () => {
           />
         </motion.div>
         <motion.div
-          className="relative left-[16px] 2xl:left-[210px] top-[90px] 2xl:top-0 z-1 w-[60%] aspect-3/4"
+          className="relative left-4 2xl:left-[210px] top-[90px] 2xl:top-0 z-1 w-[60%] aspect-3/4"
           style={getTransform(-20)}
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ const BodyTop: React.FC = () => {
         <motion.div
           className="relative w-[75%] aspect-3/4 overflow-hidden shadow-xl mt-[110px] ml-auto mr-8"
           style={getTransform(35)}
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: "easeOut" }}
