@@ -9,6 +9,7 @@ import LoveStory from "../components/love_story";
 import WeddingPlan from "../components/wedding_plan";
 import Album from "../components/album";
 import OurLoveStory from "../components/our_love_story";
+import CountDown from "@/app/countdown/page";
 
 
 const HomePage: React.FC = () => {
@@ -18,7 +19,8 @@ const HomePage: React.FC = () => {
       <Hero />
       <HomeContent>
         <BodyTop />
-        <Introduce />
+        {/* <Introduce /> */}
+        <CountDown />
         <OurLoveStory />
         <WeddingPlan />
         <Album />

@@ -1,18 +1,27 @@
 "use client"
 
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import CountdownTimer from '../component/countdown_timer'
 
 const CountDownPage: React.FC = () => {
+  // Refs for inView
+  const timerRef = useRef(null)
+  const coupleRef = useRef(null)
+  const quoteRef = useRef(null)
+  const timerInView = useInView(timerRef, { once: false, margin: '-100px' })
+  const coupleInView = useInView(coupleRef, { once: false, margin: '-100px' })
+  const quoteInView = useInView(quoteRef, { once: false, margin: '-100px' })
+
   return (
     <div className="min-h-screen bg-linear-to-b from-pink-50 via-white to-purple-50 py-6 sm:py-8 md:py-12 lg:py-20">
       <div className="max-w-[1440px] mx-auto px-2 sm:px-4">
         {/* Countdown Timer Section */}
         <motion.div
+          ref={timerRef}
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={timerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.8 }}
           className="mb-16 sm:mb-24 md:mb-32 lg:mb-40"
         >
@@ -21,8 +30,9 @@ const CountDownPage: React.FC = () => {
 
         {/* Couple Photos Section */}
         <motion.div
+          ref={coupleRef}
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={coupleInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-4 md:gap-1 lg:gap-2 mb-12 sm:mb-16 md:mb-20 px-4"
         >
@@ -97,8 +107,9 @@ const CountDownPage: React.FC = () => {
 
         {/* Quote Section */}
         <motion.div
+          ref={quoteRef}
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={quoteInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center max-w-7xl mx-auto mt-8 sm:mt-12 md:mt-16 lg:mt-24 px-4"
         >
