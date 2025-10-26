@@ -160,7 +160,7 @@ const WeddingCard: React.FC = () => {
             className="relative h-64 md:h-80 mb-8 rounded-2xl overflow-hidden"
           >
             <Image
-              src="/asset/pictures/home/wedding-couple2.png"
+              src="/asset/pictures/home/wedding-couple2.jpg"
               alt="Wedding Couple"
               fill
               className="object-cover"
