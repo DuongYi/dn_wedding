@@ -4,42 +4,47 @@ import { Invitation } from "../models/invitation.model";
 export const mockInvitations: Invitation[] = [
   {
     id: "1",
-    name: "Siêu tiền đạo Hàn Công Nhu",
+    name: "a Nhu và người thương",
     type: 0,
   },
   {
     id: "2",
-    name: "Hải Bình thân iu ❤️",
+    name: "Hải Bình thân iu ❤️ và người thương",
     type: 0,
   },
   {
     id: "3",
-    name: "Chị gái Mai Trang & anh rể Đình An",
+    name: "Bạn Ngọc và người thương",
     type: 1,
   },
   {
     id: "4",
-    name: "Bạn và người thương",
+    name: "Gia đình bạn Đức",
     type: 1,
   },
   {
     id: "5",
-    name: "Thiệp chị Lan",
+    name: "Bạn Quốc Dũng và người thương",
     type: 2,
   },
   {
     id: "6",
-    name: "Thiệp ông bà ngoại",
+    name: "Bạn Tuấn Dũng và người thương",
     type: 2,
   },
   {
     id: "7",
-    name: "Thiệp bạn bè công ty",
+    name: "Bạn Tiến Duy và người thương",
     type: 0,
   },
   {
     id: "8",
-    name: "Thiệp họ hàng bên nội",
+    name: "bạn Trọng Đạo và người thương",
+    type: 1,
+  },
+  {
+    id: "9",
+    name: "bạn Xuân Bách và người thương",
     type: 1,
   },
 ];
