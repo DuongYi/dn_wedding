@@ -59,7 +59,7 @@ export default function RootLayout({
         {/* Chỉ render nội dung khi loading hoàn thành */}
         {isLoaded && (
           <>
-            <SmoothScroll speed={0.5} smoothness={0.05} />
+            <SmoothScroll speed={1} smoothness={0.1} />
             <FallingHearts />
             <MusicPlayer />
             <RightToolbar />
