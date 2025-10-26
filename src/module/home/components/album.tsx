@@ -52,7 +52,7 @@ const Album: React.FC = () => {
 
   const photos = [
     {
-      src: '/asset/pictures/album/album2.jpg',
+      src: '/asset/pictures/album/album1.jpg',
       alt: 'Wedding photo 1',
       rotation: -7,
       scale: 1,
@@ -60,7 +60,7 @@ const Album: React.FC = () => {
       position: { spread: { left: -10, top: 5 }, gathered: { left: 35, top: 15 } }
     },
     {
-      src: '/asset/pictures/album/album4.jpg',
+      src: '/asset/pictures/wedding/ac31.png',
       alt: 'Wedding photo 2',
       rotation: 12.5,
       scale: 1,
@@ -68,7 +68,7 @@ const Album: React.FC = () => {
       position: { spread: { left: 13, top: 20 }, gathered: { left: 35, top: 25 } }
     },
     {
-      src: '/asset/pictures/wedding/ac33.png',
+      src: '/asset/pictures/album/album7.jpg',
       alt: 'Wedding photo 3',
       rotation: 1,
       scale: 1,
@@ -76,7 +76,7 @@ const Album: React.FC = () => {
       position: { spread: { left: 38, top: 10 }, gathered: { left: 35, top: 20 } }
     },
     {
-      src: '/asset/pictures/album/album1.jpg',
+      src: '/asset/pictures/album/album6.jpg',
       alt: 'Wedding photo 4',
       rotation: -12.5,
       scale: 1,

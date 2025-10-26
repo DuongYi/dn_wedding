@@ -9,6 +9,8 @@ type Story = {
   text: string;
   leftSrc: string;
   rightSrc: string;
+  objectRight: string;
+  objectLeft: string;
 };
 
 const stories: Story[] = [
@@ -19,6 +21,8 @@ const stories: Story[] = [
       "Những chuyến đi đến Đà Lạt và Phú Yên đã giúp tình yêu thêm gắn kết, để mỗi vùng đất mới đều là một kỷ niệm ngọt ngào của riêng hai đứa.",
     leftSrc: "/asset/pictures/love_story/lovestory11.jpg",
     rightSrc: "/asset/pictures/love_story/lovestory12.jpg",
+    objectRight: "object-[40%_60%] md:object-center",
+    objectLeft: "object-[40%_60%] md:object-center",
   },
   {
     time: "Sapa 2025",
@@ -27,6 +31,8 @@ const stories: Story[] = [
       "Fansipan không chỉ là một đỉnh núi, mà còn là lời thề: Vượt qua nắng gió mưa bão, chúng tôi đã cùng nhau chinh phục đỉnh Fansipan. Giờ đây, chúng tôi tiếp tục đồng hành, cùng nhau chinh phục cuộc sống phía trước. Hai trái tim, một ý chí, sẵn sàng viết tiếp chương mới của hành trình trọn đời.",
     leftSrc: "/asset/pictures/love_story/lovestory21.jpg",
     rightSrc: "/asset/pictures/love_story/lovestory22.jpg",
+    objectRight: "object-[30%_70%] md:center",
+    objectLeft: "object-[20%_80%] md:object-center",
   },
   {
     time: "31.12.2024",
@@ -35,6 +41,8 @@ const stories: Story[] = [
       "Cuối năm 2024, giữa không gian ngập tràn ánh nến và giai điệu dịu êm, tôi dành tặng cô ấy một điều bất ngờ. Khi quỳ xuống và ngỏ lời cầu hôn, cô ấy mỉm cười đầy hạnh phúc. Và rồi, bằng cái gật đầu nhẹ nhàng, chúng tôi bước sang một chương mới của tình yêu.",
     leftSrc: "/asset/pictures/love_story/lovestory31.jpg",
     rightSrc: "/asset/pictures/love_story/lovestory32.jpg",
+    objectRight: "object-[75%_25%] md:object-center",
+    objectLeft: "object-[60%_40%] md:object-center",
   },
 ];
 
@@ -164,7 +172,7 @@ const OurLoveStory: React.FC = () => {
                       alt={`${s.title} main`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
-                      className="object-cover object-[75%_25%] md:object-center"
+                      className={`object-cover ${s.objectLeft}`}
                     />
                   </div>
                   <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-lg">
@@ -173,7 +181,7 @@ const OurLoveStory: React.FC = () => {
                       alt={`${s.title} detail`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
-                      className="object-cover object-[60%_40%] md:object-center"
+                      className={`object-cover ${s.objectRight}`}
                     />
                   </div>
                 </div>

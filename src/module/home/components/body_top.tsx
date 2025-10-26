@@ -70,7 +70,7 @@ const BodyTop: React.FC = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <Image
-            src="/asset/pictures/wedding/ac18.png"
+            src="/asset/pictures/album/album4.jpg"
             alt="Wedding couple"
             fill
             sizes="400px"
@@ -86,7 +86,7 @@ const BodyTop: React.FC = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <Image
-            src="/asset/pictures/wedding/ac19.png"
+            src="/asset/pictures/album/album2.jpg"
             alt="Bride with bouquet"
             fill
             sizes="300px"
@@ -101,7 +101,7 @@ const BodyTop: React.FC = () => {
           <div className="lg:mt-32 mx-auto max-w-5xl px-4 md:px-6">
             <div className="text-center">
               <motion.h2
-                className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-light leading-tight text-gray-800 font-felidae"
+                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-light leading-tight text-gray-800 font-felidae"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -112,7 +112,7 @@ const BodyTop: React.FC = () => {
                   <motion.span
                     key={index}
                     variants={wordVariants}
-                    className="inline-block mr-2"
+                    className="inline-block mr-1.5 md:mr-4 xl:mr-6"
                   >
                     {word}
                   </motion.span>
@@ -121,7 +121,8 @@ const BodyTop: React.FC = () => {
               </motion.h2>
 
               <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed md:leading-[30px] lg:leading-[35px] mb-8 max-w-[600px] 2xl:max-w-[710px] mx-auto pt-6 md:pt-8">
-                Nụ cười của em thật dịu dàng, nhưng cũng đủ mạnh mẽ để thắp sáng những góc tối nhất trong tâm hồn anh. Nó mang theo hơi ấm, hy vọng, và một loại phép thuật mà ngay cả bầu trời đêm cũng phải ghen tị. Khi những vì sao vẫn lấp lánh nơi xa, nụ cười của em lại tỏa sáng ngay bên cạnh anh – rạng rỡ, chân thành, và sinh ra để mang đến bình yên cho trái tim này. Với anh, đó không chỉ là vẻ đẹp mà là tình yêu, là nơi trú ngụ, là mái ấm anh luôn tìm kiếm.
+                Chúng ta là hiện tại của nhau và là tất cả những ngày mai phía trước. <br />
+                Không cần quá nhiều lời hứa, chỉ cần cùng nhau đi qua từng ngày - nơi có bình yên, có nụ cười, và có nhau là đủ.
               </p>
 
               {/* Decorative flower illustration */}
@@ -153,7 +154,7 @@ const BodyTop: React.FC = () => {
         >
           <div className="relative w-[50%] aspect-6/7 overflow-hidden shadow-xl ml-auto">
             <Image
-              src="/asset/pictures/wedding/ac11.png"
+              src="/asset/pictures/album/album5.jpg"
               alt="Bride portrait"
               fill
               sizes="240px"
@@ -170,7 +171,7 @@ const BodyTop: React.FC = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <Image
-            src="/asset/pictures/wedding/ac28.png"
+            src="/asset/pictures/wedding/ac11.png"
             alt="Wedding rings"
             fill
             sizes="360px"

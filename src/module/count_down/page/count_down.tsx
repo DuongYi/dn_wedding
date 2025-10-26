@@ -44,7 +44,7 @@ const CountDownPage: React.FC = () => {
                 Đức Dương
               </h3>
               <p className="text-md md:text-lg text-gray-600 leading-relaxed">
-                Trái tim anh đầy ắp yêu thương, và điều anh mong nhất là được cùng em viết nên chương mới của cuộc đời.
+                Anh không hứa sẽ mang đến cho em cả thế giới, nhưng anh hứa sẽ luôn bên em, cùng em xây dựng một thế giới của riêng chúng ta.
               </p>
             </div>
 
@@ -99,7 +99,7 @@ const CountDownPage: React.FC = () => {
                 Kim Ngân
               </h3>
               <p className="text-md md:text-lg text-gray-600 leading-relaxed">
-                Em không cần một câu chuyện cổ tích, chỉ cần mỗi ngày đều có anh bên cạnh – cùng em đi qua những điều giản dị nhất của cuộc sống.
+                Em tin rằng hạnh phúc không phải là những khoảnh khắc rực rỡ, mà là khi có anh bên cạnh, cùng lắng nghe, cùng đi qua mọi điều của cuộc sống.
               </p>
             </div>
           </div>
