@@ -140,7 +140,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
         return;
       }
 
-      const sections = ['introduce', 'love-story', 'wedding-plan', 'album'];
+      const sections = ['countdown', 'love-story', 'wedding-plan', 'album'];
       const scrollPosition = window.scrollY + 200; // Offset for better detection
 
       // Check if at top
@@ -215,9 +215,9 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                 </li>
                 <li>
                   <a
-                    href="#introduce"
-                    onClick={(e) => scrollToSection(e, 'introduce')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === 'introduce' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    href="#countdown"
+                    onClick={(e) => scrollToSection(e, 'countdown')}
+                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === 'countdown' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Cặp đôi
                   </a>
@@ -242,9 +242,8 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
                 </li>
                 <li>
                   <a
-                    href="#album"
-                    onClick={(e) => scrollToSection(e, 'album')}
-                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === 'album' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
+                    href="/photo-album"
+                    className={`text-black hover:text-pink-500 relative w-fit font-semibold text-base xl:text-lg 2xl:text-xl ml-3 xl:ml-4 2xl:ml-6 after:content-[''] after:bg-pink-500 after:absolute after:h-0.5 after:mt-2 after:w-full after:top-full after:left-0 after:transition after:duration-300 after:origin-center  cursor-pointer transition-colors duration-300 ${activeSection === '/photo-album' ? 'after:opacity-100 after:scale-x-100' : 'after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100'}`}
                   >
                     Album
                   </a>
@@ -339,7 +338,7 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
               </a>
             </li>
             <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
-              <a href="#introduce" onClick={(e) => scrollToSection(e, 'introduce')} className="cursor-pointer">
+              <a href="#countdown" onClick={(e) => scrollToSection(e, 'countdown')} className="cursor-pointer">
                 Cặp đôi
               </a>
             </li>
@@ -354,7 +353,10 @@ const Header: React.FC<HeaderProps> = ({ alwaysShow = false }) => {
               </a>
             </li>
             <li className="text-base font-semibold text-gray-800 py-4 px-5 text-start border-b border-gray-200 hover:bg-teal-300 hover:text-white md:hover:bg-transparent">
-              <a href="#album" onClick={(e) => scrollToSection(e, 'album')} className="cursor-pointer">
+              <a href="/photo-album" onClick={() => {
+                setNavbar(false)
+                setMobileDropdownOpen(false)
+              }} className="cursor-pointer">
                 Album
               </a>
             </li>

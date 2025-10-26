@@ -15,7 +15,7 @@ const CountDownPage: React.FC = () => {
   const quoteInView = useInView(quoteRef, { once: false, margin: '-100px' })
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-pink-50 via-white to-purple-50 py-6 sm:py-8 md:py-12 lg:py-20">
+    <div className="min-h-screen bg-linear-to-b from-pink-50 via-white to-purple-50 py-6 sm:py-8 md:py-12 lg:py-20" id="countdown">
       <div className="max-w-[1440px] mx-auto px-2 sm:px-4">
         {/* Countdown Timer Section */}
         <motion.div
