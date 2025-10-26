@@ -4,7 +4,7 @@ import { Invitation } from "../models/invitation.model";
 export const mockInvitations: Invitation[] = [
   {
     id: "1",
-    name: "a Nhu và người thương",
+    name: "Anh Nhu và người thương",
     type: 0,
   },
   {
@@ -39,12 +39,117 @@ export const mockInvitations: Invitation[] = [
   },
   {
     id: "8",
-    name: "bạn Trọng Đạo và người thương",
+    name: "Bạn Trọng Đạo và người thương",
     type: 1,
   },
   {
     id: "9",
-    name: "bạn Xuân Bách và người thương",
+    name: "Bạn Xuân Bách và người thương",
+    type: 1,
+  },
+  {
+    id: "10",
+    name: "Bạn Sơn và người thương",
+    type: 1,
+  },
+  {
+    id: "11",
+    name: "Anh Tân và người thương",
+    type: 2,
+  },
+  {
+    id: "12",
+    name: "Anh Long và người thương",
+    type: 2,
+  },
+  {
+    id: "13",
+    name: "Anh Huy và người thương",
+    type: 0,
+  },
+  {
+    id: "14",
+    name: "Anh Bình và người thương",
+    type: 1,
+  },
+  {
+    id: "15",
+    name: "Anh Tiến và người thương",
+    type: 1,
+  },
+  {
+    id: "16",
+    name: "Anh Dũng và người thương",
+    type: 1,
+  },
+  {
+    id: "17",
+    name: "Anh Khoa và người thương",
+    type: 1,
+  },
+  {
+    id: "18",
+    name: "Anh Đạt và người thương",
+    type: 1,
+  },
+  {
+    id: "19",
+    name: "Bạn Thanh và người thương",
+    type: 1,
+  },
+  {
+    id: "20",
+    name: "Bạn Ngân iu ❤️ và người thương",
+    type: 1,
+  },
+  {
+    id: "21",
+    name: "Bạn Thu Phương và anh Hà Dân",
+    type: 1,
+  },
+  {
+    id: "22",
+    name: "Bạn Linh yêu quý và người thương ❤️",
+    type: 1,
+  },
+  {
+    id: "23",
+    name: "Bạn Thanh và người thương ❤️",
+    type: 1,
+  },
+  {
+    id: "24",
+    name: "Gia đình bạn Hà ❤️",
+    type: 1,
+  },
+  {
+    id: "25",
+    name: "Gia đình bạn Bảo ❤️",
+    type: 1,
+  },
+  {
+    id: "26",
+    name: "Mẹ Nhung yêu quý và bố Anh ❤️",
+    type: 1,
+  },
+  {
+    id: "26",
+    name: "Bạn Long và người thương ❤️",
+    type: 1,
+  },
+  {
+    id: "27",
+    name: "Bạn Phương và người thương ❤️",
+    type: 1,
+  },
+  {
+    id: "28",
+    name: "Gia đình bạn Ngọc ❤️",
+    type: 1,
+  },
+  {
+    id: "29",
+    name: "Anh Tú và người thương ❤️",
     type: 1,
   },
 ];
