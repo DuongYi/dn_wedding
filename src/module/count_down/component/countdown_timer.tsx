@@ -19,7 +19,7 @@ const CountdownTimer: React.FC = () => {
 
   useEffect(() => {
     // Ngày cưới: 09/11/2025
-    const weddingDate = new Date('2025-11-09T12:15:00').getTime()
+    const weddingDate = new Date('2025-11-09T00:00:00').getTime()
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime()
