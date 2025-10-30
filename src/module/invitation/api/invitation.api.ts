@@ -162,6 +162,36 @@ export const mockInvitations: Invitation[] = [
     name: "Em Dũng và người thương ❤️",
     type: 0,
   },
+  {
+    id: "32",
+    name: "Chị Hằng và người thương ❤️",
+    type: 0,
+  },
+  {
+    id: "33",
+    name: "Chị Hoạt và người thương ❤️",
+    type: 0,
+  },
+  {
+    id: "34",
+    name: "Chị Huế và người thương ❤️",
+    type: 0,
+  },
+  {
+    id: "35",
+    name: "Chị Phương và gia đình ❤️",
+    type: 0,
+  },
+  {
+    id: "36",
+    name: "Chị Hạnh và gia đình ❤️",
+    type: 0,
+  },
+  {
+    id: "37",
+    name: "Chú Hiếu và gia đình ❤️",
+    type: 0,
+  },
 ];
 
 // Mock API functions
