@@ -207,6 +207,11 @@ export const mockInvitations: Invitation[] = [
     name: "Bạn Tuấn và người thương ❤️",
     type: 0,
   },
+  {
+    id: "41",
+    name: "Bạn Hằng và người thương ❤️",
+    type: 0,
+  },
 ];
 
 // Mock API functions
