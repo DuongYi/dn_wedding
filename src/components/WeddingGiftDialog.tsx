@@ -1,6 +1,7 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
+import Image from 'next/image'
 
 interface WeddingGiftDialogProps {
   isOpen: boolean
@@ -8,6 +9,24 @@ interface WeddingGiftDialogProps {
 }
 
 const WeddingGiftDialog: React.FC<WeddingGiftDialogProps> = ({ isOpen, onClose }) => {
+  const [copiedBride, setCopiedBride] = useState(false)
+  const [copiedGroom, setCopiedGroom] = useState(false)
+
+  const copyToClipboard = async (text: string, isBride: boolean) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      if (isBride) {
+        setCopiedBride(true)
+        setTimeout(() => setCopiedBride(false), 2000)
+      } else {
+        setCopiedGroom(true)
+        setTimeout(() => setCopiedGroom(false), 2000)
+      }
+    } catch (err) {
+      console.error('Failed to copy:', err)
+    }
+  }
+
   if (!isOpen) return null
 
   return (
@@ -95,23 +114,14 @@ const WeddingGiftDialog: React.FC<WeddingGiftDialogProps> = ({ isOpen, onClose }
 
               {/* QR Code Placeholder */}
               <div className="bg-white rounded-2xl p-4 mb-4 shadow-inner">
-                <div className="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-200">
-                  {/* Replace this div with actual QR code component */}
-                  <div className="text-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      className="w-16 h-16 mx-auto mb-2 text-gray-300"
-                    >
-                      <rect x="3" y="3" width="7" height="7" strokeWidth="2" />
-                      <rect x="14" y="3" width="7" height="7" strokeWidth="2" />
-                      <rect x="3" y="14" width="7" height="7" strokeWidth="2" />
-                      <rect x="14" y="14" width="7" height="7" strokeWidth="2" />
-                    </svg>
-                    <p className="text-sm text-gray-400 font-medium">QR Code Cô Dâu</p>
-                  </div>
+                <div className="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/asset/pictures/qrcode/qrkimngan.png"
+                    alt="QR Code Cô Dâu"
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
 
@@ -119,15 +129,57 @@ const WeddingGiftDialog: React.FC<WeddingGiftDialogProps> = ({ isOpen, onClose }
               <div className="bg-white/70 backdrop-blur rounded-2xl p-4 space-y-2">
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600">Ngân hàng:</span>
-                  <span className="font-semibold text-gray-800">MB Bank</span>
+                  <span className="font-semibold text-gray-800">BIDV</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600">Số tài khoản:</span>
-                  <span className="font-semibold text-gray-800">0123456789</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-gray-800">31410002859834</span>
+                    <button
+                      onClick={() => copyToClipboard('31410002859834', true)}
+                      className={`p-1.5 rounded-lg transition-all ${copiedBride
+                        ? 'bg-green-100 text-green-600'
+                        : 'bg-pink-100 text-pink-600 hover:bg-pink-200'
+                        }`}
+                      title="Copy số tài khoản"
+                    >
+                      {copiedBride ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          className="w-4 h-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          className="w-4 h-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                          />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
                 </div>
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600">Chủ tài khoản:</span>
-                  <span className="font-semibold text-gray-800">Nguyễn Kim Ngân</span>
+                  <span className="font-semibold text-gray-800">Bùi Thị Kim Ngân</span>
                 </div>
               </div>
             </div>
@@ -155,23 +207,14 @@ const WeddingGiftDialog: React.FC<WeddingGiftDialogProps> = ({ isOpen, onClose }
 
               {/* QR Code Placeholder */}
               <div className="bg-white rounded-2xl p-4 mb-4 shadow-inner">
-                <div className="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-200">
-                  {/* Replace this div with actual QR code component */}
-                  <div className="text-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      className="w-16 h-16 mx-auto mb-2 text-gray-300"
-                    >
-                      <rect x="3" y="3" width="7" height="7" strokeWidth="2" />
-                      <rect x="14" y="3" width="7" height="7" strokeWidth="2" />
-                      <rect x="3" y="14" width="7" height="7" strokeWidth="2" />
-                      <rect x="14" y="14" width="7" height="7" strokeWidth="2" />
-                    </svg>
-                    <p className="text-sm text-gray-400 font-medium">QR Code Chú Rể</p>
-                  </div>
+                <div className="aspect-square bg-gray-50 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/asset/pictures/qrcode/qrducduong.png"
+                    alt="QR Code Chú Rể"
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
 
@@ -179,15 +222,57 @@ const WeddingGiftDialog: React.FC<WeddingGiftDialogProps> = ({ isOpen, onClose }
               <div className="bg-white/70 backdrop-blur rounded-2xl p-4 space-y-2">
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600">Ngân hàng:</span>
-                  <span className="font-semibold text-gray-800">Vietcombank</span>
+                  <span className="font-semibold text-gray-800">MB Bank</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600">Số tài khoản:</span>
-                  <span className="font-semibold text-gray-800">9876543210</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-gray-800">0393919320</span>
+                    <button
+                      onClick={() => copyToClipboard('0393919320', false)}
+                      className={`p-1.5 rounded-lg transition-all ${copiedGroom
+                        ? 'bg-green-100 text-green-600'
+                        : 'bg-blue-100 text-blue-600 hover:bg-blue-200'
+                        }`}
+                      title="Copy số tài khoản"
+                    >
+                      {copiedGroom ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          className="w-4 h-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          className="w-4 h-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                          />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
                 </div>
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600">Chủ tài khoản:</span>
-                  <span className="font-semibold text-gray-800">Nguyễn Đức Dương</span>
+                  <span className="font-semibold text-gray-800">Vũ Đức Dương</span>
                 </div>
               </div>
             </div>
